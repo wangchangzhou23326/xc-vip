@@ -1,3 +1,4 @@
+
 ## service-menu/grayapi/shop/categories
 > 获取菜单列表及单品列表
 

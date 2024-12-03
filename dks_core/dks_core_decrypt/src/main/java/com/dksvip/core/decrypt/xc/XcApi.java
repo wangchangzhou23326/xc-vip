@@ -75,5 +75,4 @@ public interface XcApi {
      */
     JSONObject getExchangeCard(String cardNo, String password);
 
-
 }

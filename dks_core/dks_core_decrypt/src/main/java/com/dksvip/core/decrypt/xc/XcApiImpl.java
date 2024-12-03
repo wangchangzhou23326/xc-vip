@@ -25,6 +25,13 @@ public class XcApiImpl implements XcApi {
 
     private String ViP_URL = "https://vip.heytea.com/api/";
 
+    /**
+     * 获取菜单分类及商品列表
+     *
+     * @param isTakeaway 是否外卖
+     * @param shopId     商家id
+     * @return
+     */
     @Override
     public JSONObject getMenuCategories(Integer isTakeaway, Integer shopId) {
         String PostUrl = API_URL + "service-menu/grayapi/shop/categories?isTakeaway=" + isTakeaway + "&shopId=" + shopId;
@@ -52,6 +59,15 @@ public class XcApiImpl implements XcApi {
         return client.sendGetRequest(PostUrl, additionalHeaders);
     }
 
+    /**
+     * 获取商品详情
+     *
+     * @param isTakeaway 是否外卖
+     * @param menuType   菜单类型
+     * @param productIds 商品id
+     * @param shopId     商家id
+     * @return
+     */
     @Override
     public JSONObject getProductInfo(Integer isTakeaway, Integer menuType, Integer productIds, Integer shopId) {
         String url = API_URL + "service-menu/vip/grayapi/v4/shop/product-info?isTakeaway=" + isTakeaway + "&menuType=" + menuType + "&productIds=" + productIds + "&shopId=" + shopId;
@@ -79,6 +95,11 @@ public class XcApiImpl implements XcApi {
         return client.sendGetRequest(url, additionalHeaders);
     }
 
+    /**
+     * 获取用户优惠券
+     *
+     * @return
+     */
     @Override
     public JSONObject getUserCoupon() {
         String postUrl = ViP_URL + "service-coupon/couponLibrary/unused-page/v2";
@@ -112,6 +133,11 @@ public class XcApiImpl implements XcApi {
         return client.sendPostRequest(postUrl, jsonObject, additionalHeaders);
     }
 
+    /**
+     * 获取用户余额
+     *
+     * @return
+     */
     @Override
     public JSONObject getUserBalance() {
         String postUrl = API_URL + "service-account/wallet/account/detail";
@@ -140,6 +166,13 @@ public class XcApiImpl implements XcApi {
         return client.sendPostRequest(postUrl, new JSONObject(), additionalHeaders);
     }
 
+    /**
+     * 获取积分兑换券列表
+     *
+     * @param memberType ?
+     * @param page       页码
+     * @return
+     */
     @Override
     public JSONObject getExchangeCouponList(Integer memberType, Integer page) {
         String getUrl = ViP_URL + "service-member/mall_product/productLst?member_type=" + memberType + "&page=" + page;
@@ -170,6 +203,11 @@ public class XcApiImpl implements XcApi {
         return client.sendGetRequest(getUrl, additionalHeaders);
     }
 
+    /**
+     * 获取用户积分
+     *
+     * @return
+     */
     @Override
     public JSONObject getUsableScore() {
         String getUrl = ViP_URL + "service-member/vip/member/usable-score";
@@ -198,6 +236,11 @@ public class XcApiImpl implements XcApi {
         return client.sendGetRequest(getUrl, additionalHeaders);
     }
 
+    /**
+     * 获取订单
+     *
+     * @return
+     */
     @Override
     public JSONObject getCurrentOrder() {
         String getUrl = API_URL + "service-oms-order/grayapi/order/current";
@@ -226,6 +269,12 @@ public class XcApiImpl implements XcApi {
         return client.sendGetRequest(getUrl, additionalHeaders);
     }
 
+    /**
+     * 兑换 券
+     *
+     * @param ticketCode 兑换码
+     * @return
+     */
     @Override
     public JSONObject exchangeCouponsByCode(String ticketCode) {
         String posUrl = ViP_URL + "service-member/vip/coupon-library/coupon/exchange";
