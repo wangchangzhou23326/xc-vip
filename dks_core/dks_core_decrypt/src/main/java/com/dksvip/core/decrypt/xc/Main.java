@@ -25,6 +25,7 @@ public class Main {
 
 //        System.out.println(xcApi.getLogo());
 
+
         System.out.println(xcApi.exchangeCouponsByCode("1000010010"));
 
     }
