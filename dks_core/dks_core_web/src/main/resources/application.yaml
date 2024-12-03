@@ -1,0 +1,19 @@
+server:
+  port: 15781
+
+logging:
+  level:
+    org.springframework.web: info
+    sdk.biz.info: warn
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    generator:
+      write_numbers_as_strings: true #序列化的时候，将数值类型全部转换成字符串返回
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  profiles:
+    active: dev  # dev pre prod  # 默认激活开发环境配置

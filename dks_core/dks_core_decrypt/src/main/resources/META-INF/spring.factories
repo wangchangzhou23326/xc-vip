@@ -1,0 +1,3 @@
+#com.rxvip.core.decrypt.rx.RXApi = com.dksvip.core.decrypt.dks.RxApiImpl
+
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration =com.rxvip.core.decrypt.config.DecryptAutoConfiguration

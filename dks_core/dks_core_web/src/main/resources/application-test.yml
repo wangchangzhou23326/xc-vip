@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://1.94.150.141:3306/mdl_vip?useTimezone=true&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: Pan123456!
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 2
+      min-idle: 1
+      max-active: 200
+      max-wait: 60000
+  redis:
+    port: 6379
+    database: 0
+    connect-timeout: 60s
+    jedis:
+      pool:
+        min-idle: 100
+        max-idle: 1000
+        max-wait: 30000
+        max-active: 256
+    timeout: 30s
+    host: 1.94.150.141
+    password: Pan123630
+  rabbitmq:
+    host: 1.94.150.141
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /
+    listener:
+      simple:
+        #消费者最小数量
+        concurrency: 10
+        #消费者最大数量
+        max-concurrency: 10
+        #限制消费者，每次只能处理一条消息，处理完才能继续下一条消息
+        prefetch: 1
+        #启动时是否默认启动容器，默认为 true
+        auto-startup: true
+        #被拒绝时重新进入队列的
+        default-requeue-rejected: true
+

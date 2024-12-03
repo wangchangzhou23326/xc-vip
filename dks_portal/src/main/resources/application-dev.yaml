@@ -1,0 +1,6 @@
+mdl:
+  apiUrl: http://127.0.0.1:15780
+rx:
+  apiUrl: http://127.0.0.1:15781
+hbw:
+  apiUrl: http://127.0.0.1:15782

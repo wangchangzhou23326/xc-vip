@@ -1,0 +1,6 @@
+mdl:
+  apiUrl: http://m6.imdl.vip/mdlapi
+rx:
+  apiUrl: http://127.0.0.1:15781
+hbw:
+  apiUrl: http://127.0.0.1:15782

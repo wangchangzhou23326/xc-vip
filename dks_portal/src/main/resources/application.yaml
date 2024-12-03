@@ -1,0 +1,9 @@
+server:
+  port: 4663
+
+spring:
+  profiles:
+    active: dev  # dev prod  # 默认激活开发环境配 置
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
