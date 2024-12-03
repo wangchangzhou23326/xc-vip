@@ -1,15 +1,11 @@
 package com.dksvip.core.decrypt.xc;
 
 import cn.hutool.json.JSONArray;
-import cn.hutool.json.JSONException;
 import cn.hutool.json.JSONObject;
-import cn.hutool.json.JSONUtil;
 import lombok.extern.slf4j.Slf4j;
-import okhttp3.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +22,8 @@ public class XcApiImpl implements XcApi {
     private XcOkHttpClient client;
 
     private String API_URL = "https://go.heytea.com/api/";
+
+    private String ViP_URL = "https://vip.heytea.com/api/";
 
     @Override
     public JSONObject getMenuCategories(Integer isTakeaway, Integer shopId) {
@@ -56,7 +54,7 @@ public class XcApiImpl implements XcApi {
 
     @Override
     public JSONObject getProductInfo(Integer isTakeaway, Integer menuType, Integer productIds, Integer shopId) {
-        String url = "https://go.heytea.com/api/service-menu/vip/grayapi/v4/shop/product-info?isTakeaway=" + isTakeaway + "&menuType=" + menuType + "&productIds=" + productIds + "&shopId=" + shopId;
+        String url = API_URL + "service-menu/vip/grayapi/v4/shop/product-info?isTakeaway=" + isTakeaway + "&menuType=" + menuType + "&productIds=" + productIds + "&shopId=" + shopId;
         Map<String, String> additionalHeaders = new HashMap<>();
 //        additionalHeaders.put("Accept-Charset","UTF-8");
 //        additionalHeaders.put("referer","https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/index/index");
@@ -83,7 +81,7 @@ public class XcApiImpl implements XcApi {
 
     @Override
     public JSONObject getUserCoupon() {
-        String postUrl = "https://vip.heytea.com/api/service-coupon/couponLibrary/unused-page/v2";
+        String postUrl = ViP_URL + "service-coupon/couponLibrary/unused-page/v2";
 
         JSONObject jsonObject = new JSONObject();
         jsonObject.set("page", 1).set("size", 10);
@@ -116,7 +114,7 @@ public class XcApiImpl implements XcApi {
 
     @Override
     public JSONObject getUserBalance() {
-        String postUrl = "https://go.heytea.com/api/service-account/wallet/account/detail";
+        String postUrl = API_URL + "service-account/wallet/account/detail";
         Map<String, String> additionalHeaders = new HashMap<>();
         additionalHeaders.put("Accept-Charset", "UTF-8");
         additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/mall/index?__appxPageId=1");
@@ -144,7 +142,7 @@ public class XcApiImpl implements XcApi {
 
     @Override
     public JSONObject getExchangeCouponList(Integer memberType, Integer page) {
-        String getUrl = "https://vip.heytea.com/api/service-member/mall_product/productLst?member_type=" + memberType + "&page=" + page;
+        String getUrl = ViP_URL + "service-member/mall_product/productLst?member_type=" + memberType + "&page=" + page;
 
         Map<String, String> additionalHeaders = new HashMap<>();
         additionalHeaders.put("Accept-Charset", "UTF-8");
@@ -174,7 +172,7 @@ public class XcApiImpl implements XcApi {
 
     @Override
     public JSONObject getUsableScore() {
-        String getUrl = "https://vip.heytea.com/api/service-member/vip/member/usable-score";
+        String getUrl = ViP_URL + "service-member/vip/member/usable-score";
         Map<String, String> additionalHeaders = new HashMap<>();
         additionalHeaders.put("Accept-Charset", "UTF-8");
         additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/mall/index?__appxPageId=1");
@@ -202,7 +200,7 @@ public class XcApiImpl implements XcApi {
 
     @Override
     public JSONObject getCurrentOrder() {
-        String getUrl = "https://go.heytea.com/api/service-oms-order/grayapi/order/current";
+        String getUrl = API_URL + "service-oms-order/grayapi/order/current";
         Map<String, String> additionalHeaders = new HashMap<>();
         additionalHeaders.put("Accept-Charset", "UTF-8");
         additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/mall/index?__appxPageId=1");
@@ -230,7 +228,7 @@ public class XcApiImpl implements XcApi {
 
     @Override
     public JSONObject exchangeCouponsByCode(String ticketCode) {
-        String posUrl = "https://vip.heytea.com/api/service-member/vip/coupon-library/coupon/exchange";
+        String posUrl = ViP_URL + "service-member/vip/coupon-library/coupon/exchange";
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("code", ticketCode);
         Map<String, String> additionalHeaders = new HashMap<>();
@@ -434,8 +432,6 @@ public class XcApiImpl implements XcApi {
         additionalHeaders.put("User-Agent", "Mozilla/5.0 (Linux; U; Android 11; zh-CN; MI 8 Lite Build/RKQ1.200826.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 UWS/3.22.2.66 Mobile Safari/537.36 UCBS/3.22.2.66_230817192043 ChannelId(4) NebulaSDK/1.8.100112 Nebula AlipayDefined(nt:WIFI,ws:393|0|2.75) AliApp(AP/10.5.26.8000) AlipayClient/10.5.26.8000 Language/zh-Hans useStatusBar/true isConcaveScreen/true Region/CNAriver/1.0.0 DTN/2.0");
         return client.sendPostRequest(PostUrl, jsonObject, additionalHeaders);
     }
-
-
 
 
 //    public static void main(String[] args) {
