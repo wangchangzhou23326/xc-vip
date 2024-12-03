@@ -15,7 +15,6 @@ public interface XcApi {
      */
     JSONObject getMenuCategories(Integer isTakeaway, Integer shopId);
 
-
     /**
      * 获取商品详情
      */
