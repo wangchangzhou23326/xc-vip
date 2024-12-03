@@ -65,7 +65,6 @@ public class XcOkHttpClient {
     public static JSONObject sendGetRequest(String url, Map<String, String> additionalHeaders) {
         OkHttpClient okHttpClient = new OkHttpClient();
         HashMap<String, String> head = getHead(null, additionalHeaders);
-
         //转json
         Request request = new Request.Builder()
                 .url(url)
