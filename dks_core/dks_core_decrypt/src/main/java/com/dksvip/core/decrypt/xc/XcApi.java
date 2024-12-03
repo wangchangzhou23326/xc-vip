@@ -41,7 +41,7 @@ public interface XcApi {
     JSONObject getExchangeCouponList(Integer memberType, Integer page);
 
     /**
-     * 获取当前?当日?订单
+     * 获取订单
      */
     JSONObject getCurrentOrder();
 
