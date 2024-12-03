@@ -433,7 +433,7 @@ public class XcApiImpl implements XcApi {
      */
     @Override
     public JSONObject getNearShop(String distance, String shiftLocation, String userLocation) {
-        String getUrl = String.format("https://go.heytea.com/api/service-delivery/grayapi/location-shop-list?distance=%s&shift_location=%s&user_location=%s", distance, shiftLocation, userLocation);
+        String getUrl = String.format(API_URL+"service-delivery/grayapi/location-shop-list?distance=%s&shift_location=%s&user_location=%s", distance, shiftLocation, userLocation);
         Map<String, String> additionalHeaders = new HashMap<>();
 //        additionalHeaders.put("Accept-Charset", "UTF-8");
         additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/mall/index?__appxPageId=1");

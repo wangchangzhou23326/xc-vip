@@ -22,3 +22,18 @@
 
 ## service-member/vip/coupon-library/coupon/exchange
 > 兑换码兑换券
+
+## service-smc/grayapi/user/closest/shop
+> 获取当前城市门店
+
+## ervice-location/grayapi/global-area
+> 获取所有城市
+
+## service-smc/grayapi/city/shop-page
+> 获取当前城市的所有门店
+
+## service-delivery/grayapi/location-shop-list
+> 获取附近门店
+
+## service-member/vip/prepaid-card/exchange
+> 兑换喜卡
