@@ -29,7 +29,7 @@ public class XcApiImpl implements XcApi {
 
     @Override
     public JSONObject getMenuCategories(Integer isTakeaway, Integer shopId) {
-        String PostUrl = "https://go.heytea.com/api/service-menu/grayapi/shop/categories?isTakeaway=" + isTakeaway + "&shopId=" + shopId;
+        String PostUrl = API_URL + "service-menu/grayapi/shop/categories?isTakeaway=" + isTakeaway + "&shopId=" + shopId;
         Map<String, String> additionalHeaders = new HashMap<>();
 //        additionalHeaders.put("Accept-Charset", "UTF-8");
 //        additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/index/index");
@@ -378,14 +378,15 @@ public class XcApiImpl implements XcApi {
 
     /**
      * 获取附近门店
-     * @param distance          距离
-     * @param shiftLocation     偏移位置
-     * @param userLocation      用户位置
+     *
+     * @param distance      距离
+     * @param shiftLocation 偏移位置
+     * @param userLocation  用户位置
      * @return
      */
     @Override
-    public JSONObject getNearShop(String distance,String shiftLocation, String userLocation){
-        String getUrl = String.format("https://go.heytea.com/api/service-delivery/grayapi/location-shop-list?distance=%s&shift_location=%s&user_location=%s",distance,shiftLocation,userLocation);
+    public JSONObject getNearShop(String distance, String shiftLocation, String userLocation) {
+        String getUrl = String.format("https://go.heytea.com/api/service-delivery/grayapi/location-shop-list?distance=%s&shift_location=%s&user_location=%s", distance, shiftLocation, userLocation);
         Map<String, String> additionalHeaders = new HashMap<>();
 //        additionalHeaders.put("Accept-Charset", "UTF-8");
         additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/mall/index?__appxPageId=1");
@@ -413,27 +414,26 @@ public class XcApiImpl implements XcApi {
 
     /**
      * 兑换喜茶卡
-     * @param cardNo     喜茶卡号
-     * @param password    密码
+     *
+     * @param cardNo   喜茶卡号
+     * @param password 密码
      * @return
      */
     @Override
     public JSONObject getExchangeCard(String cardNo, String password) {
         String PostUrl = API_URL + "service-member/vip/prepaid-card/exchange";
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("cardNo",cardNo);
-        jsonObject.put("password",password);
+        jsonObject.put("cardNo", cardNo);
+        jsonObject.put("password", password);
         HashMap<String, String> additionalHeaders = new HashMap<>();
-        additionalHeaders.put("referer","https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/member/exchange_code/exchange_area/index?__appxPageId=1&from=myIndex&type=giftCard");
-        additionalHeaders.put("current-page","pages/member/exchange_code/exchange_area/index");
-        additionalHeaders.put("authorization","Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMyMDQwODUsIm5iZiI6MTczMzIwNDA4NSwiZXhwIjoxNzMzMjkwNDg1LCJpc3MiOiJoZXl0ZWEifQ.hSWlcZHeHuNqTv3auCSN5pWCdH5Yy4-0vxRIsRdAaGQ");
-        additionalHeaders.put("alipayMiniMark","nmD/fQQ1B9xRv7INmjacYVrg83SyVGsQyR1FQENEfg73mPRaPgiZ1pzcXz//I8/UtHIh73gQ25pq/SZBrnN6XF1LHEwL3jkx+beE+lE/Riw=");
-        additionalHeaders.put("Content-Length","34");
-        additionalHeaders.put("User-Agent","Mozilla/5.0 (Linux; U; Android 11; zh-CN; MI 8 Lite Build/RKQ1.200826.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 UWS/3.22.2.66 Mobile Safari/537.36 UCBS/3.22.2.66_230817192043 ChannelId(4) NebulaSDK/1.8.100112 Nebula AlipayDefined(nt:WIFI,ws:393|0|2.75) AliApp(AP/10.5.26.8000) AlipayClient/10.5.26.8000 Language/zh-Hans useStatusBar/true isConcaveScreen/true Region/CNAriver/1.0.0 DTN/2.0");
-        return client.sendPostRequest(PostUrl,jsonObject,additionalHeaders);
+        additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/member/exchange_code/exchange_area/index?__appxPageId=1&from=myIndex&type=giftCard");
+        additionalHeaders.put("current-page", "pages/member/exchange_code/exchange_area/index");
+        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMyMDQwODUsIm5iZiI6MTczMzIwNDA4NSwiZXhwIjoxNzMzMjkwNDg1LCJpc3MiOiJoZXl0ZWEifQ.hSWlcZHeHuNqTv3auCSN5pWCdH5Yy4-0vxRIsRdAaGQ");
+        additionalHeaders.put("alipayMiniMark", "nmD/fQQ1B9xRv7INmjacYVrg83SyVGsQyR1FQENEfg73mPRaPgiZ1pzcXz//I8/UtHIh73gQ25pq/SZBrnN6XF1LHEwL3jkx+beE+lE/Riw=");
+        additionalHeaders.put("Content-Length", "34");
+        additionalHeaders.put("User-Agent", "Mozilla/5.0 (Linux; U; Android 11; zh-CN; MI 8 Lite Build/RKQ1.200826.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 UWS/3.22.2.66 Mobile Safari/537.36 UCBS/3.22.2.66_230817192043 ChannelId(4) NebulaSDK/1.8.100112 Nebula AlipayDefined(nt:WIFI,ws:393|0|2.75) AliApp(AP/10.5.26.8000) AlipayClient/10.5.26.8000 Language/zh-Hans useStatusBar/true isConcaveScreen/true Region/CNAriver/1.0.0 DTN/2.0");
+        return client.sendPostRequest(PostUrl, jsonObject, additionalHeaders);
     }
-
-
 
 
     public static void main(String[] args) {
