@@ -90,7 +90,6 @@ public class XcOkHttpClient {
     }
 
     public static HashMap<String, String> getHead(String body, Map<String, String> additionalHeaders) {
-
         HashMap<String, String> head = new HashMap<>();
 //        head.put("Accept-Charset","UTF-8");
 //        head.put("accept-language","zh-CN");
