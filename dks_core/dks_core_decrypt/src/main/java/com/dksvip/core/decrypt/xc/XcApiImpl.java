@@ -436,101 +436,103 @@ public class XcApiImpl implements XcApi {
     }
 
 
-    public static void main(String[] args) {
-        String PostUrl = "https://go.heytea.com/api/service-smc/grayapi/user/closest/shop";
-        JSONObject jsonObject = new JSONObject("{\"location\":\"114.277981,30.709883\",\"id\":4935,\"type\":0}");
 
-//        String urlString = "https://your-api-endpoint.com"; // 替换成你的 URL
 
-        /*// 请求体内容，例如发送 JSON 数据
-        String postData = "{\"key1\":\"value1\", \"key2\":\"value2\"}";  // 发送的 JSON 数据
+//    public static void main(String[] args) {
+//        String PostUrl = "https://go.heytea.com/api/service-smc/grayapi/user/closest/shop";
+//        JSONObject jsonObject = new JSONObject("{\"location\":\"114.277981,30.709883\",\"id\":4935,\"type\":0}");
+//
+////        String urlString = "https://your-api-endpoint.com"; // 替换成你的 URL
+//
+//        /*// 请求体内容，例如发送 JSON 数据
+//        String postData = "{\"key1\":\"value1\", \"key2\":\"value2\"}";  // 发送的 JSON 数据
+//
+//        try {
+//            // 创建 URL 对象
+//            URL url = new URL(urlString);
+//            // 打开连接
+//            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+//            // 设置请求方法为 POST
+//            connection.setRequestMethod("POST");
+//
+//            // 启用输入和输出流
+//            connection.setDoOutput(true);
+//            connection.setDoInput(true);
+//
+//            // 设置请求头 (Content-Type 和其他头)
+//            connection.setRequestProperty("Content-Type", "application/json");
+//            connection.setRequestProperty("Accept", "application/json");
+//
+//            // 获取输出流，并写入请求体
+//            try (OutputStream os = connection.getOutputStream()) {
+//                byte[] input = postData.getBytes(StandardCharsets.UTF_8); // 将数据转换为字节数组
+//                os.write(input, 0, input.length); // 发送数据
+//            }
+//
+//            // 获取响应输入流
+//            InputStream inputStream = connection.getInputStream();
+//
+//            // 读取响应体，使用正确的编码
+//            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
+//
+//            String line;
+//            StringBuilder responseBody = new StringBuilder();
+//
+//            while ((line = reader.readLine()) != null) {
+//                responseBody.append(line);
+//            }
+//
+//            System.out.println("Response body: " + responseBody.toString());
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }*/
+//
+//        Headers headers = null;
+//        Headers.Builder headersbuilder = new Headers.Builder();
+//        headersbuilder.add("Accept-Charset", "UTF-8")
+//                .add("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411261800.22/index.html#pages/index/index")
+//                .add("accept-language", "zh-CN")
+//                .add("current-page", "pages/index/index")
+//                .add("client-version", "306.0.0")
+//                .add("x-release-type", "ONLINE")
+//                .add("version", "5.1.37")
+//                .add("gmt-zone", "+08:00")
+//                .add("accept", "application/prs.heytea.v1+json")
+//                .add("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzI4NjU3MzEsIm5iZiI6MTczMjg2NTczMSwiZXhwIjoxNzMyOTUyMTMxLCJpc3MiOiJoZXl0ZWEifQ.g4IWQADfvRgr0TbwfyoPn7qADQbFSrdGOUorLuOf_Ug")
+//                .add("x-region-id", "10")
+//                .add("client", "3")
+//                .add("x-client", "alipay")
+//                .add("content-type", "application/json")
+//                .add("region", "1")
+//                .add("x-version", "5.1.37")
+//                //.add("Accept-Encoding","gzip")
+//                .add("alipayMiniMark", "nmD/fQQ1B9xRv7INmjacYei4s2TvOVFZafMFUaAB/rLHfowXB0l7bBTb4X1EA/1bCGXOZNTj4jrLdHAqvb9UepSEw4VZmivpSvXGMwgfjyA=")
+//                .add("Content-Length", "54")
+//                .add("Host", "go.heytea.com");
+//
+//        headers = headersbuilder.build();
+//
+//        OkHttpClient okHttpClient = new OkHttpClient();
+//
+//        RequestBody jsonBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), JSONUtil.toJsonStr(jsonObject));
+//        Request request = new Request.Builder()
+//                .url(PostUrl)
+//                .headers(headers)
+//                .post(jsonBody)
+//                .build();
+//
+//        JSONObject result = null;
+//        Call call = okHttpClient.newCall(request);
+//        try (Response response = call.execute()) {
+//            if (!response.isSuccessful()) {
+//                throw new IOException("Unexpected code " + response);
+//            }
+//            String responseBody = response.body().string();
+//            System.out.println(responseBody);
+//        } catch (IOException | JSONException e) {
+//            e.printStackTrace();
+//        }
 
-        try {
-            // 创建 URL 对象
-            URL url = new URL(urlString);
-            // 打开连接
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            // 设置请求方法为 POST
-            connection.setRequestMethod("POST");
-
-            // 启用输入和输出流
-            connection.setDoOutput(true);
-            connection.setDoInput(true);
-
-            // 设置请求头 (Content-Type 和其他头)
-            connection.setRequestProperty("Content-Type", "application/json");
-            connection.setRequestProperty("Accept", "application/json");
-
-            // 获取输出流，并写入请求体
-            try (OutputStream os = connection.getOutputStream()) {
-                byte[] input = postData.getBytes(StandardCharsets.UTF_8); // 将数据转换为字节数组
-                os.write(input, 0, input.length); // 发送数据
-            }
-
-            // 获取响应输入流
-            InputStream inputStream = connection.getInputStream();
-
-            // 读取响应体，使用正确的编码
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
-
-            String line;
-            StringBuilder responseBody = new StringBuilder();
-
-            while ((line = reader.readLine()) != null) {
-                responseBody.append(line);
-            }
-
-            System.out.println("Response body: " + responseBody.toString());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
-        Headers headers = null;
-        Headers.Builder headersbuilder = new Headers.Builder();
-        headersbuilder.add("Accept-Charset", "UTF-8")
-                .add("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411261800.22/index.html#pages/index/index")
-                .add("accept-language", "zh-CN")
-                .add("current-page", "pages/index/index")
-                .add("client-version", "306.0.0")
-                .add("x-release-type", "ONLINE")
-                .add("version", "5.1.37")
-                .add("gmt-zone", "+08:00")
-                .add("accept", "application/prs.heytea.v1+json")
-                .add("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzI4NjU3MzEsIm5iZiI6MTczMjg2NTczMSwiZXhwIjoxNzMyOTUyMTMxLCJpc3MiOiJoZXl0ZWEifQ.g4IWQADfvRgr0TbwfyoPn7qADQbFSrdGOUorLuOf_Ug")
-                .add("x-region-id", "10")
-                .add("client", "3")
-                .add("x-client", "alipay")
-                .add("content-type", "application/json")
-                .add("region", "1")
-                .add("x-version", "5.1.37")
-                //.add("Accept-Encoding","gzip")
-                .add("alipayMiniMark", "nmD/fQQ1B9xRv7INmjacYei4s2TvOVFZafMFUaAB/rLHfowXB0l7bBTb4X1EA/1bCGXOZNTj4jrLdHAqvb9UepSEw4VZmivpSvXGMwgfjyA=")
-                .add("Content-Length", "54")
-                .add("Host", "go.heytea.com");
-
-        headers = headersbuilder.build();
-
-        OkHttpClient okHttpClient = new OkHttpClient();
-
-        RequestBody jsonBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), JSONUtil.toJsonStr(jsonObject));
-        Request request = new Request.Builder()
-                .url(PostUrl)
-                .headers(headers)
-                .post(jsonBody)
-                .build();
-
-        JSONObject result = null;
-        Call call = okHttpClient.newCall(request);
-        try (Response response = call.execute()) {
-            if (!response.isSuccessful()) {
-                throw new IOException("Unexpected code " + response);
-            }
-            String responseBody = response.body().string();
-            System.out.println(responseBody);
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-        }
-    }
 
 }
