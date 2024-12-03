@@ -2,6 +2,8 @@ package com.dksvip.core.decrypt.xc;
 
 import cn.hutool.json.JSONObject;
 
+import java.util.List;
+
 /**
  * @author zhangcan
  * @date 2024/11/29 11:58
@@ -78,4 +80,31 @@ public interface XcApi {
      * @return
      */
     JSONObject exchangeCouponsByCode(String ticketCode);
+
+    /*
+  当前城市门店
+ */
+    JSONObject getLocationShpo(String  location, int  id,int type);
+
+    /*
+      所有城市
+     */
+    JSONObject getAllCity();
+
+    /*
+    当前城市的所有门店
+     */
+    JSONObject getCurrentCity(String countryCode, String cityCode, List<Object> loadShopIds, int topShopId, Integer strategy, String userLocation);
+
+    /*
+    附近门店
+     */
+    JSONObject  getNearShop(String distance, String shiftLocation, String userLocation );
+
+    /*
+    兑换喜茶卡
+     */
+    JSONObject  getExchangeCard(String cardNo,String password);
+
+
 }

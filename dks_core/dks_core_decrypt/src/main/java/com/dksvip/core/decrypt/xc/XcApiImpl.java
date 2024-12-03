@@ -1,5 +1,6 @@
 package com.dksvip.core.decrypt.xc;
 
+import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONException;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,6 +24,8 @@ public class XcApiImpl implements XcApi {
 
     @Autowired
     private XcOkHttpClient client;
+
+    private String API_URL = "https://go.heytea.com/api/";
 
     @Override
     public JSONObject getMenuCategories(Integer isTakeaway, Integer shopId) {
@@ -253,6 +257,184 @@ public class XcApiImpl implements XcApi {
         additionalHeaders.put("Host", "vip.heytea.com");
         return client.sendPostRequest(posUrl, jsonObject, additionalHeaders);
     }
+
+    /**
+     * 获取当前城市门店
+     *
+     * @param location 经纬度坐标
+     * @param id       门店Id
+     * @param type     门店类型
+     * @return
+     */
+    @Override
+    public JSONObject getLocationShpo(String location, int id, int type) {
+        String PostUrl = API_URL + "service-smc/grayapi/user/closest/shop";
+
+
+        // 请求体
+//        JSONObject jsonObject = new JSONObject("{\"location\":\"114.278457,30.711057\",\"id\":3161,\"type\":0}");
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.set("location", location);
+        jsonObject.set("id", id);
+        jsonObject.set("type", type);
+        // 额外的请求头（如果有）
+        Map<String, String> additionalHeaders = new HashMap<>();
+////        additionalHeaders.put("Content-Type", "application/json");
+//        additionalHeaders.put("x-region-id", "10");
+//        additionalHeaders.put("x-client", "alipay");
+//        additionalHeaders.put("client","3");
+//        additionalHeaders.put("content-type","application/json");
+//        additionalHeaders.put("region","1");
+////        additionalHeaders.put("Accept-Encoding","gzip");
+//        additionalHeaders.put("alipayMiniMark","nmD/fQQ1B9xRv7INmjacYei4s2TvOVFZafMFUaAB/rLHfowXB0l7bBTb4X1EA/1bCGXOZNTj4jrLdHAqvb9UepSEw4VZmivpSvXGMwgfjyA=");
+//        additionalHeaders.put("Content-Length","54");
+//        additionalHeaders.put("Connection","Keep-Alive");
+//        additionalHeaders.put("Host","go.heytea.com");
+//        Headers.Builder headersbuilder = new Headers.Builder();
+//        additionalHeaders.put("Accept-Charset","UTF-8");
+//        additionalHeaders.put("referer","https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/index/index");
+//        additionalHeaders.put("accept-language","zh-CN");
+//        additionalHeaders.put("current-page","pages/index/index");
+//        additionalHeaders.put("client-version","308.0.0");
+//        additionalHeaders.put("x-release-type","ONLINE");
+//        additionalHeaders.put("version","5.1.37");
+//        additionalHeaders.put("gmt-zone","+08:00");
+//        additionalHeaders.put("accept","application/prs.heytea.v1+json");
+//    additionalHeaders.put("authorization","Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMxMTgyMzcsIm5iZiI6MTczMzExODIzNywiZXhwIjoxNzMzMjA0NjM3LCJpc3MiOiJoZXl0ZWEifQ.qD_jdX0-xvM54hq-ShmzheS7qqGLZiaUign1L-kE_nk");
+//        additionalHeaders.put("x-region-id","10");
+//        additionalHeaders.put("client","3");
+//        additionalHeaders.put("x-client","alipay");
+//        additionalHeaders.put("content-type","application/json");
+//        additionalHeaders.put("region","1");
+//        additionalHeaders.put("x-version","5.1.37");
+        //.add("Accept-Encoding","gzip")
+//        additionalHeaders.put("alipayMiniMark","nmD/fQQ1B9xRv7INmjacYT0Inv3rN14QVErhyK3GCbO52FKu4B7+o8QyjW2SW8kqkIo0I8Xx2e/41iAqgdt/io5yr1pdAQy04PTq2Jq85l8=");
+//        additionalHeaders.put("Content-Length","54");
+//        additionalHeaders.put("Host","go.heytea.com");
+
+        return client.sendPostRequest(PostUrl, jsonObject, additionalHeaders);
+
+    }
+
+    /**
+     * 获取所有城市
+     *
+     * @return
+     */
+    @Override
+    public JSONObject getAllCity() {
+        String PostUrl = API_URL + "service-location/grayapi/global-area";
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("keyword", "");
+
+        HashMap<String, String> additionalHeaders = new HashMap<>();
+        //additionalHeaders.put("referer", " https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/index/store/choose_area_v2/index?__appxPageId=4&cityCode=156420100\n");
+        //additionalHeaders.put("current-page", "pages/index/store/choose_area_v2/index");
+        //additionalHeaders.put("client-version", "308.0.0");
+        //additionalHeaders.put("authorization","Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMxMjA2MDQsIm5iZiI6MTczMzEyMDYwNCwiZXhwIjoxNzMzMjA3MDA0LCJpc3MiOiJoZXl0ZWEifQ.otmT9-knCc0-pJcZe0nSQqP7gJaJfI1fH_cgLAiwfus");
+        //additionalHeaders.put("alipayMiniMark","nmD/fQQ1B9xRv7INmjacYae2k3FXdqVLO5jmQeC0XbvssStAHlaTQyEMIxYvMb7vNj7PQBLFL4z33HRWUFtziSmAOIO2jyf32Wb1D78oG34=");
+        //additionalHeaders.put("Content-Length","14");
+        return client.sendPostRequest(PostUrl, jsonObject, additionalHeaders);
+
+
+    }
+
+    /**
+     * 获取当前城市的所有门店
+     *
+     * @param countryCode  国家代码
+     * @param cityCode     城市代码
+     * @param loadShopIds  第一次请求传空值，如果想获取更多地址，就需要将第一次获取到的id，存入改数组，如果第三次获取，就需要将前两次的的id全部存入数组当中。（相当于城市过滤器）
+     * @param topShopId    首选商店id
+     * @param strategy     策略
+     * @param userLocation 用户位置
+     * @return
+     */
+    @Override
+    public JSONObject getCurrentCity(String countryCode, String cityCode, List<Object> loadShopIds, int topShopId, Integer strategy, String userLocation) {
+        String PostUrl = API_URL + "service-smc/grayapi/city/shop-page";
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("country_code", countryCode);
+        jsonObject.put("city_code", cityCode);
+        //转换为JSONArray
+        JSONArray jsonArray = new JSONArray();
+        for (Object item : loadShopIds) {
+            jsonArray.put(item);
+        }
+        jsonObject.put("loadShopIds", jsonArray);
+        jsonObject.put("topShopId", topShopId);
+        jsonObject.put("strategy", strategy);
+        jsonObject.put("user_location", userLocation);
+
+        HashMap<String, String> additionalHeaders = new HashMap<>();
+        additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/index/store/choose_area_v2/index?__appxPageId=5&cityCode=156410500");
+        additionalHeaders.put("client-version", "308.0.0");
+        // additionalHeaders.put("authorization"," Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMxMjQ1MzQsIm5iZiI6MTczMzEyNDUzNCwiZXhwIjoxNzMzMjEwOTM0LCJpc3MiOiJoZXl0ZWEifQ.wlPWpxYFCFJBrt_Uw8s6CjzGjCMrJjkNEheRJKlThbc");
+        additionalHeaders.put("Content-Length", "132");
+
+        return client.sendPostRequest(PostUrl, jsonObject, additionalHeaders);
+    }
+
+    /**
+     * 获取附近门店
+     * @param distance          距离
+     * @param shiftLocation     偏移位置
+     * @param userLocation      用户位置
+     * @return
+     */
+    @Override
+    public JSONObject getNearShop(String distance,String shiftLocation, String userLocation){
+        String getUrl = String.format("https://go.heytea.com/api/service-delivery/grayapi/location-shop-list?distance=%s&shift_location=%s&user_location=%s",distance,shiftLocation,userLocation);
+        Map<String, String> additionalHeaders = new HashMap<>();
+//        additionalHeaders.put("Accept-Charset", "UTF-8");
+        additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/mall/index?__appxPageId=1");
+//        additionalHeaders.put("accept-language", "zh-CN");
+        additionalHeaders.put("current-page", "pages/coupon/index");
+//        additionalHeaders.put("client-version", "308.0.0");
+//        additionalHeaders.put("x-release-type", "ONLINE");
+//        additionalHeaders.put("version", "5.1.37");
+//        additionalHeaders.put("gmt-zone", "+08:00");
+//        additionalHeaders.put("accept", "application/prs.heytea.v1+json");
+        // authorization 授权 --- 有时效性
+//        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMxOTA0NjAsIm5iZiI6MTczMzE5MDQ2MCwiZXhwIjoxNzMzMjc2ODYwLCJpc3MiOiJoZXl0ZWEifQ.2LyskMq6Z67d4uHiI_Sfy86IFeWKHeM5ikX0C1Dmav8");
+//        additionalHeaders.put("x-region-id", "10");
+//        additionalHeaders.put("x-client", "alipay");
+//        additionalHeaders.put("client", "3");
+//        additionalHeaders.put("content-type", "application/json");
+//        additionalHeaders.put("region", "1");
+//        additionalHeaders.put("x-version", "5.1.37");
+        additionalHeaders.put("alipayMiniMark", "nmD/fQQ1B9xRv7INmjacYSrU0g7huXypzI+sLvVHSMOUALndZntLCP1sZrvt46ghOFcRgO+fcxwr/+assxnUre19dEHTlOizZbesNCu4XTE=");
+        additionalHeaders.put("User-Agent", "Mozilla/5.0 (Linux; U; Android 11; zh-CN; MI 8 Lite Build/RKQ1.200826.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 UWS/3.22.2.66 Mobile Safari/537.36 UCBS/3.22.2.66_230817192043 ChannelId(8) NebulaSDK/1.8.100112 Nebula AlipayDefined(nt:WIFI,ws:393|0|2.75) AliApp(AP/10.5.26.8000) AlipayClient/10.5.26.8000 Language/zh-Hans useStatusBar/true isConcaveScreen/true Region/CNAriver/1.0.0 DTN/2.0");
+//        additionalHeaders.put("Connection", "Keep-Alive");
+//        additionalHeaders.put("Host", "vip.heytea.com");
+        return client.sendGetRequest(getUrl, additionalHeaders);
+    }
+
+    /**
+     * 兑换喜茶卡
+     * @param cardNo     喜茶卡号
+     * @param password    密码
+     * @return
+     */
+    @Override
+    public JSONObject getExchangeCard(String cardNo, String password) {
+        String PostUrl = API_URL + "service-member/vip/prepaid-card/exchange";
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("cardNo",cardNo);
+        jsonObject.put("password",password);
+        HashMap<String, String> additionalHeaders = new HashMap<>();
+        additionalHeaders.put("referer","https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/member/exchange_code/exchange_area/index?__appxPageId=1&from=myIndex&type=giftCard");
+        additionalHeaders.put("current-page","pages/member/exchange_code/exchange_area/index");
+        additionalHeaders.put("authorization","Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMyMDQwODUsIm5iZiI6MTczMzIwNDA4NSwiZXhwIjoxNzMzMjkwNDg1LCJpc3MiOiJoZXl0ZWEifQ.hSWlcZHeHuNqTv3auCSN5pWCdH5Yy4-0vxRIsRdAaGQ");
+        additionalHeaders.put("alipayMiniMark","nmD/fQQ1B9xRv7INmjacYVrg83SyVGsQyR1FQENEfg73mPRaPgiZ1pzcXz//I8/UtHIh73gQ25pq/SZBrnN6XF1LHEwL3jkx+beE+lE/Riw=");
+        additionalHeaders.put("Content-Length","34");
+        additionalHeaders.put("User-Agent","Mozilla/5.0 (Linux; U; Android 11; zh-CN; MI 8 Lite Build/RKQ1.200826.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 UWS/3.22.2.66 Mobile Safari/537.36 UCBS/3.22.2.66_230817192043 ChannelId(4) NebulaSDK/1.8.100112 Nebula AlipayDefined(nt:WIFI,ws:393|0|2.75) AliApp(AP/10.5.26.8000) AlipayClient/10.5.26.8000 Language/zh-Hans useStatusBar/true isConcaveScreen/true Region/CNAriver/1.0.0 DTN/2.0");
+        return client.sendPostRequest(PostUrl,jsonObject,additionalHeaders);
+    }
+
+
+
 
     public static void main(String[] args) {
         String PostUrl = "https://go.heytea.com/api/service-smc/grayapi/user/closest/shop";
