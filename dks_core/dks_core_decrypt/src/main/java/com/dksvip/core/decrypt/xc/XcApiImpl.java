@@ -267,7 +267,7 @@ public class XcApiImpl implements XcApi {
      * @return
      */
     @Override
-    public JSONObject getLocationShpo(String location, int id, int type) {
+    public JSONObject getLocationShop(String location, int id, int type) {
         String PostUrl = API_URL + "service-smc/grayapi/user/closest/shop";
 
 
