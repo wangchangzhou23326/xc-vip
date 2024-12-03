@@ -89,11 +89,6 @@ public class XcOkHttpClient {
         return result;
     }
 
-
-
-
-
-
     public static HashMap<String, String> getHead(String body, Map<String, String> additionalHeaders) {
 
         HashMap<String, String> head = new HashMap<>();
