@@ -27,6 +27,7 @@ public class Main {
 
 //        System.out.println(xcApi.getLogo());
 
+
         System.out.println(xcApi.exchangeCouponsByCode("1000010010"));
       //        JSONObject response = xcApi.getLocationShpo("114.278045,30.71089",3161,0);
 //        System.out.println(response);
