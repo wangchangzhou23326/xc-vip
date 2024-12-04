@@ -457,32 +457,66 @@ public class XcApiImpl implements XcApi {
     public JSONObject getCart(JSONObject param) {
         String PostUrl = API_URL + "service-cart/vip/grayapi/cart/person3/edit";
         JSONObject body = new JSONObject();
-        body.putOnce("shopId",param.getStr("shopId"));
-        body.putOnce("isTakeaway",param.getBool("isTakeaway"));
-        body.putOnce("pmsData",param.getJSONArray("pmsData"));
-        body.putOnce("bensfitNos",param.getJSONArray("bensfitNos"));
-        body.putOnce("isChoosedBag",param.getBool("isChoosedBag"));
-        body.putOnce("optionForm",param.getInt("optionForm"));
-        body.putOnce("editType",param.getInt("editType"));
-        body.putOnce("product",param.getJSONObject("products"));
-        body.putOnce("ridedistance",param.getStr("ridedistance"));
-        body.putOnce("couponItems",param.getJSONArray("couponItems"));
+//        body.putOnce("shopId", param.getStr("shopId"));
+//        body.putOnce("isTakeaway", param.getBool("isTakeaway"));
+//        body.putOnce("pmsData", param.getJSONObject("pmsData"));
+//        body.putOnce("benefitNos", param.getJSONArray("benefitNos"));
+//        body.putOnce("isStudentMember", param.getBool("isStudentMember"));
+//        body.putOnce("isChoosedBag", param.getBool("isChoosedBag"));
+//        body.putOnce("optionFrom", param.getInt("optionFrom"));
+//        body.putOnce("editType", param.getInt("editType"));
+//        body.putOnce("product", param.getJSONObject("product"));
+//        body.putOnce("rideDistance", param.getStr("rideDistance"));
+//        body.putOnce("couponItems", param.getJSONArray("couponItems"));
+// 提取公共参数
+        body.putOnce("shopId", param.getStr("shopId"));
+        body.putOnce("isTakeaway", param.getBool("isTakeaway"));
+        body.putOnce("pmsData", param.getJSONObject("pmsData"));
+        body.putOnce("benefitNos", param.getJSONArray("benefitNos"));
+        body.putOnce("isStudentMember", param.getBool("isStudentMember"));
+        body.putOnce("isChoosedBag", param.getBool("isChoosedBag"));
+//        body.putOnce("rideDistance", param.getStr("rideDistance"));
+//        body.putOnce("couponItems", param.getJSONArray("couponItems"));
 
-        return client.sendPostRequest(PostUrl, body, null);
+        // 根据action字段决定是添加还是删除
+        String action = param.getStr("action");
+        if ("add".equalsIgnoreCase(action)) {
+            // 添加购物车项
+            body.putOnce("optionFrom", param.getInt("optionFrom"));
+            body.putOnce("editType", 1); // 假设1代表添加操作
+            body.putOnce("product", param.getJSONObject("product"));
+        } else if ("delete".equalsIgnoreCase(action)) {
+            // 删除购物车项
+            // 注意：这里的cartItem结构可能与添加时不同，需要根据实际情况调整
+            body.putOnce("optionFrom", 0); // 假设0代表删除操作（或这个字段对删除操作不重要）
+//            body.putOnce("editType", -1); // 假设-1代表删除操作
+            // 注意：这里的cartItem应该是一个能够唯一标识要删除的购物车项的结构
+            // 由于你的示例中cartItem结构与添加时不同，这里我们假设需要提供一个uniqueNo
+            JSONObject cartItem = new JSONObject();
+            cartItem.put("uniqueNo", param.getJSONObject("cartItem").getStr("uniqueNo"));
+            // 如果后端需要其他信息（如productId和quantity），也需要添加进来
+            // 但在这个例子中，我们假设uniqueNo已经足够
+            body.putOnce("cartItem", cartItem);
+            body.putOnce("editType", -1); // 假设-1代表删除操作
+        } else {
+            // 未知操作，返回错误
+            return new JSONObject().put("error", "Unknown action");
+        }
+        body.putOnce("rideDistance", param.getStr("rideDistance"));
+        body.putOnce("couponItems", param.getJSONArray("couponItems"));
+
+        Map<String, String> additionalHeaders = new HashMap<>();
+        additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/index/combo_v2/index?__appxPageId=3&productId=7366&shopId=3161");
+        additionalHeaders.put("current-page", "pages/index/combo_v2/index");
+        additionalHeaders.put("client-version", "308.0.0");
+        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2NTc5MjI4IiwidXNlcl9tYWluX2lkIjo3NjgzOTExMiwiY2hhbm5lbCI6IloiLCJzb3VyY2UiOiJhcGkiLCJpc19ndWVzdCI6ZmFsc2UsImxhYmVsIjoiY2xpZW50OmFsaXBheSIsImlhdCI6MTczMzI5NjEyMywibmJmIjoxNzMzMjk2MTIzLCJleHAiOjE3MzMzODI1MjMsImlzcyI6ImhleXRlYSJ9.QrylA88EYwkbgpn0j_NUO4X7yD343GEHNNSvuHmcV7A");
+        additionalHeaders.put("alipayMiniMark","nmD/fQQ1B9xRv7INmjacYfXN1BP1oQHE4JIwTyTxuFS0abxgOw/EaKFMa3xMULFmfmo5pCu8cl2vFi50fuuaIX5FfLt0/CWl6QtWUySD52g=");
+        additionalHeaders.put("User-Agent","Mozilla/5.0 (Linux; U; Android 11; zh-CN; MI 8 Lite Build/RKQ1.200826.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 UWS/3.22.2.66 Mobile Safari/537.36 UCBS/3.22.2.66_230817192043 ChannelId(6) NebulaSDK/1.8.100112 Nebula AlipayDefined(nt:WIFI,ws:393|0|2.75) AliApp(AP/10.5.26.8000) AlipayClient/10.5.26.8000 Language/zh-Hans useStatusBar/true isConcaveScreen/true Region/CNAriver/1.0.0 DTN/2.0");
+        additionalHeaders.put("Connection","Keep-Alive");
+        return client.sendPostRequest(PostUrl,body, additionalHeaders);
+
     }
-}
-
-
-
-//        Map<String, String> additionalHeaders = new HashMap<>();
-//        additionalHeaders.put("referer","https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/index/combo_v2/index?__appxPageId=3&productId=7366&shopId=3161");
-//        additionalHeaders.put("current-page","pages/index/combo_v2/index");
-//        additionalHeaders.put("client-version","308.0.0");
-//        additionalHeaders.put("authorization","Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMyNzg2NjEsIm5iZiI6MTczMzI3ODY2MSwiZXhwIjoxNzMzMzY1MDYxLCJpc3MiOiJoZXl0ZWEifQ.GXVcT4L7RvYg9Ui8XzRtqiPm927bznyVSCKImFehaxg");
-//        additionalHeaders.put("")
-//
-//
-//    }
+    }
 
 
 //    public static void main(String[] args) {

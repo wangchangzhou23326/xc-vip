@@ -1,67 +1,497 @@
 {
-  "shopId": 3161,
-  "isTakeaway": false,
-  "pmsData": {
-    "10041002": {
-      "clientScene": 1,
-      "isStudentMember": false,
-      "timestamp": 1733278708017,
-      "isMemberPlus": false
+  "code": 0,
+  "message": "SUCCESS",
+  "requestId": null,
+  "data": {
+    "shopId": 3161,
+    "timeStat": {
+      "FilterClientProductFlow": 0,
+      "CheckAddProductItemFlow": 0,
+      "BuildNoSaleDtoFlow": 4,
+      "RemoveProductByUuidFlow": 0,
+      "FilterSaleSceneProductFlow": 0,
+      "BuildPersonCartDtoFlow": 3,
+      "async-SavePersonCartFlow": 0,
+      "BasePersonFlow": 0,
+      "WashMallProductFlow": 0,
+      "ClearNoSaleProductsOnCartFlow": 0,
+      "AddProductItemFlow": 0,
+      "LoadActivityRule2Flow": 6,
+      "BuildPersonCartVoFlow.preCalculatePoints": 6,
+      "PersonCallSettlementFlow": 52,
+      "CheckProductLimitFlow": 0,
+      "WashPersonProductFlow": 0,
+      "CheckShopStatus2Flow": 0,
+      "async-LoadMallProductsFlow": 0,
+      "BuildProductItemDtoFlow": 0,
+      "HandlePersonPackageBagFlow": 0
     },
-    "10041003": {
-      "benefitNos": ""
-    }
-  },
-  "benefitNos": [],
-  "isStudentMember": false,
-  "isChoosedBag": false,
-  "optionFrom": 2,
-  "editType": 1,
-  "product": {
-    "type": 0,
-    "productId": 7213,
-    "seriesId": 52,
-    "quantity": 1,
-    "skuId": 12420,
-    "skuNo": "30400359",
-    "materials": [
+    "cartMd5": "41470ae0f8f956d112933fe24799eef3",
+    "currency": "¥",
+    "products": [
       {
-        "groupId": 82,
-        "id": 3235,
-        "no": "19999013"
+        "type": 3,
+        "uniqueNo": "c::2411154667158262:202411151351400288277988:|30400352|19999005,19999011,19999110,19999137,19999435,19999508,19999958,19999964|||;;202411302003430172284772:|30400262|19999005,19999013,19999110,19999137,19999205,19999508,19999570,19999958|||",
+        "uuid": "c::2411154667158262:202411151351400288277988:|30400352|19999005,19999011,19999110,19999137,19999435,19999508,19999958,19999964|||;;202411302003430172284772:|30400262|19999005,19999013,19999110,19999137,19999205,19999508,19999570,19999958|||",
+        "productName": "温暖过冬·喜悦双杯",
+        "productImageUrl": "https://go.cdn.heytea.com/storage/product/2024/11/22/353524bc8e344c0da75b4b12433dcf12.jpg",
+        "quantity": 2,
+        "isChoosed": true,
+        "itemType": 0,
+        "sort": 1733292687700,
+        "originPrice": 38,
+        "productId": 7366,
+        "productNo": "2411154667158262",
+        "comboMealType": 2,
+        "price": 33.8,
+        "linePrice": 38,
+        "materialTotal": 0,
+        "discountInfoShow": 1,
+        "skuId": 12647,
+        "comboMealPositions": [
+          {
+            "name": "饮品1",
+            "no": "202411151351400288277988",
+            "productList": [
+              {
+                "type": 0,
+                "uniqueNo": "s:|30400352|19999005,19999011,19999110,19999137,19999435,19999508,19999958,19999964|||",
+                "productName": "三倍厚抹",
+                "productImageUrl": "https://go.cdn.heytea.com/storage/product/2024/11/13/66c1eee2a575430dbe97b9614c8db066.jpg",
+                "productNameIconUrl": "",
+                "quantity": 1,
+                "isChoosed": true,
+                "itemType": 0,
+                "sort": 1733292687699,
+                "itemId": "s:|30400352|19999005,19999011,19999110,19999137,19999435,19999508,19999958,19999964|||",
+                "productId": 7218,
+                "productNo": "2410127780199495",
+                "categoryId": 12,
+                "showTrademark": false,
+                "isSingle": false,
+                "isNowMaking": true,
+                "isPremade": false,
+                "isJoinQueue": true,
+                "hasBoxFee": true,
+                "hasTableware": false,
+                "supportReverseElection": false,
+                "skuId": 12418,
+                "skuNo": "30400352",
+                "skuType": 1,
+                "materials": [
+                  {
+                    "groupId": 82,
+                    "id": 1650,
+                    "no": "19999435",
+                    "name": "冰(推荐)",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 247,
+                    "id": 3551,
+                    "no": "19999137",
+                    "name": "标准(含浓抹糯糯)",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 3,
+                    "id": 28,
+                    "no": "19999011",
+                    "name": "推荐",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 4,
+                    "id": 379,
+                    "no": "19999005",
+                    "name": "少甜(推荐)",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 6,
+                    "id": 2283,
+                    "no": "19999110",
+                    "name": "标准(推荐)",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 167,
+                    "id": 3544,
+                    "no": "19999964",
+                    "name": "标准(含抹茶冻)",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 11,
+                    "id": 3556,
+                    "no": "19999958",
+                    "name": "默认方式(冷撒热不撒)",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 27,
+                    "id": 1835,
+                    "no": "19999508",
+                    "name": "可降解吸管",
+                    "price": 0,
+                    "type": 0
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "饮品2",
+            "no": "202411302003430172284772",
+            "productList": [
+              {
+                "type": 0,
+                "uniqueNo": "s:|30400262|19999005,19999013,19999110,19999137,19999205,19999508,19999570,19999958|||",
+                "productName": "芝芝抹茶",
+                "productImageUrl": "https://go.cdn.heytea.com/storage/product/2024/11/26/7feba51f4acf4a0ca3e9b16ea8225ae3.jpg",
+                "productNameIconUrl": "",
+                "quantity": 1,
+                "isChoosed": true,
+                "itemType": 0,
+                "sort": 1733292687698,
+                "itemId": "s:|30400262|19999005,19999013,19999110,19999137,19999205,19999508,19999570,19999958|||",
+                "productId": 7048,
+                "productNo": "2409025918399063",
+                "categoryId": 408,
+                "showTrademark": false,
+                "isSingle": false,
+                "isNowMaking": true,
+                "isPremade": false,
+                "isJoinQueue": true,
+                "hasBoxFee": true,
+                "hasTableware": false,
+                "supportReverseElection": false,
+                "skuId": 12189,
+                "skuNo": "30400262",
+                "skuType": 1,
+                "materials": [
+                  {
+                    "groupId": 82,
+                    "id": 3235,
+                    "no": "19999013",
+                    "name": "推荐(少冰)",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 4,
+                    "id": 379,
+                    "no": "19999005",
+                    "name": "少甜(推荐)",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 7,
+                    "id": 3500,
+                    "no": "19999570",
+                    "name": "抹茶",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 12,
+                    "id": 3560,
+                    "no": "19999137",
+                    "name": "标准(推荐)",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 6,
+                    "id": 2875,
+                    "no": "19999110",
+                    "name": "云顶(标准)",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 11,
+                    "id": 3508,
+                    "no": "19999958",
+                    "name": "默认方式",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 64,
+                    "id": 1981,
+                    "no": "19999205",
+                    "name": "推荐方式",
+                    "price": 0,
+                    "type": 0
+                  },
+                  {
+                    "groupId": 27,
+                    "id": 1835,
+                    "no": "19999508",
+                    "name": "可降解吸管",
+                    "price": 0,
+                    "type": 0
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
-        "groupId": 4,
-        "id": 501,
-        "no": "19999005"
-      },
-      {
-        "groupId": 6,
-        "id": 3569,
-        "no": "19999348"
-      },
-      {
-        "groupId": 64,
-        "id": 1981,
-        "no": "19999205"
-      },
-      {
-        "groupId": 157,
-        "id": 2685,
-        "no": "19999964"
-      },
-      {
-        "groupId": 248,
-        "id": 2833,
-        "no": "19999436"
-      },
-      {
-        "groupId": 27,
-        "id": 1835,
-        "no": "19999508"
+        "type": 0,
+        "uniqueNo": "s:|30300305|19999005,19999008,19999011,19999129,19999137,19999508,19999639,19999964|||",
+        "uuid": "s:|30300305|19999005,19999008,19999011,19999129,19999137,19999508,19999639,19999964|||;-7138",
+        "productName": "芒芒甘露(首创)",
+        "productImageUrl": "https://go.cdn.heytea.com/storage/product/2024/10/31/83ca94aba820483dbf01a1017bae3a5e.jpg",
+        "productNameIconUrl": "",
+        "quantity": 2,
+        "isChoosed": true,
+        "itemType": 0,
+        "sort": 1733292542169,
+        "itemId": "s:|30300305|19999005,19999008,19999011,19999129,19999137,19999508,19999639,19999964|||",
+        "productId": 7138,
+        "productNo": "2409197971580081",
+        "categoryId": 410,
+        "showTrademark": false,
+        "isSingle": false,
+        "isNowMaking": true,
+        "isPremade": false,
+        "isJoinQueue": true,
+        "isNewProduct": false,
+        "hasBoxFee": true,
+        "hasTableware": false,
+        "supportReverseElection": false,
+        "skuId": 12307,
+        "skuNo": "30300305",
+        "skuType": 1,
+        "unTaxPrice": 17,
+        "price": 18,
+        "originPrice": 18,
+        "discountPrice": 0,
+        "materials": [
+          {
+            "groupId": 244,
+            "id": 3519,
+            "no": "19999137",
+            "name": "标准",
+            "price": 0,
+            "type": 0
+          },
+          {
+            "groupId": 82,
+            "id": 1645,
+            "no": "19999008",
+            "name": "冰沙",
+            "price": 0,
+            "type": 0
+          },
+          {
+            "groupId": 3,
+            "id": 558,
+            "no": "19999011",
+            "name": "推荐",
+            "price": 0,
+            "type": 0
+          },
+          {
+            "groupId": 4,
+            "id": 67,
+            "no": "19999005",
+            "name": "少甜(推荐)",
+            "price": 0,
+            "type": 0
+          },
+          {
+            "groupId": 7,
+            "id": 196,
+            "no": "19999129",
+            "name": "绿妍(推荐)",
+            "price": 0,
+            "type": 0
+          },
+          {
+            "groupId": 167,
+            "id": 2458,
+            "no": "19999964",
+            "name": "标准(推荐)",
+            "price": 0,
+            "type": 0
+          },
+          {
+            "groupId": 160,
+            "id": 2229,
+            "no": "19999639",
+            "name": "红柚果粒",
+            "price": 0,
+            "type": 0
+          },
+          {
+            "groupId": 27,
+            "id": 1835,
+            "no": "19999508",
+            "name": "可降解吸管",
+            "price": 0,
+            "type": 0
+          }
+        ]
       }
-    ]
-  },
-  "rideDistance": null,
-  "couponItems": []
+    ],
+    "mallProducts": [],
+    "totalPrice": 103.6,
+    "productTotalPrice": 103.6,
+    "originTotalPrice": 103.6,
+    "discountPrice": 0,
+    "couponPrice": 0,
+    "activityPrice": 0,
+    "goCartPrice": 103.6,
+    "goCartNoVirtualPrice": 0,
+    "goCartVirtualPrice": 0,
+    "goCartOriginPrice": 103.6,
+    "goCartProductsPrice": 103.6,
+    "goCartProductsOriginPrice": 103.6,
+    "goCartUnTaxProductsPrice": 110,
+    "mallCartPrice": 0,
+    "mallCartOriginPrice": 0,
+    "mallDeliveryPrice": 0,
+    "isTakeaway": false,
+    "deliveryPrice": 0,
+    "deliveryOriginPrice": 0,
+    "totalCount": 4,
+    "freshCount": 0,
+    "teaCount": 6,
+    "deleteProducts": [],
+    "isChoosedAll": true,
+    "isGoCartChoosedAll": true,
+    "tablewareInfo": {
+      "isShowOption": false,
+      "switchType": 0,
+      "products": []
+    },
+    "isMallCartChoosedAll": true,
+    "pointsInfo": {
+      "totalPoints": 51,
+      "teaPointsInfo": {
+        "totalPoints": 51,
+        "detail": [
+          {
+            "points": 51,
+            "type": 1
+          }
+        ]
+      },
+      "generalPointsInfo": null,
+      "description": "每消费2元获得1积分"
+    },
+    "expInfo": {
+      "totalExps": 123,
+      "subExpList": [
+        {
+          "exps": 103,
+          "subTradeType": 0,
+          "percent": null
+        },
+        {
+          "exps": 20,
+          "subTradeType": 2,
+          "percent": 20
+        }
+      ],
+      "extraExps": 20,
+      "title": null,
+      "generalExpsData": null,
+      "teaExpsData": {
+        "exps": 123,
+        "extraExps": 20,
+        "subExpList": [
+          {
+            "exps": 103,
+            "subTradeType": 0,
+            "percent": null
+          },
+          {
+            "exps": 20,
+            "subTradeType": 2,
+            "percent": 20
+          }
+        ]
+      },
+      "decription": null,
+      "ignoreProductFlag": false
+    },
+    "userRights": {
+      "invalidBenefitCode": null,
+      "invalidBenefitReason": null,
+      "totalAmount": 0,
+      "deliveryDiscountFee": 0,
+      "randomAmount": 0,
+      "benefitItemMap": {},
+      "benefitList": [
+        {
+          "level": 2,
+          "benefitNo": "1010003",
+          "benefitName": "周四一起喝随机立减",
+          "privilegeType": 1,
+          "balance": 1,
+          "totalBalance": 1000,
+          "periodStart": "2024-02-01",
+          "periodEnd": null,
+          "region": "CN",
+          "useIs": 0,
+          "checkedIs": 0,
+          "reason": "仅限一起喝订单使用",
+          "b1010008UseCount": null,
+          "tips": null,
+          "useLimit": null
+        }
+      ]
+    },
+    "showRule": {
+      "0": [
+        {
+          "isUseMemberPlusPrivilege": false,
+          "ruleNo": "10023008",
+          "haveMemberPlusProduct": null,
+          "canUseMemberPlusPrivilege": false
+        },
+        {
+          "reqTimestamp": null,
+          "ruleNo": "10020000",
+          "pmsData": {}
+        }
+      ]
+    },
+    "takeawayDeliveryFee": {
+      "deliveryPrice": 0,
+      "deliveryOriginPrice": 0,
+      "deliveryRealOriginPrice": 0,
+      "deliveryDiscount": false,
+      "deliveryNightIncrease": false,
+      "deliveryNightPrice": 0,
+      "deliveryActivityPrice": 0,
+      "deliveryMemberPrice": 0,
+      "deliveryMemberInspPrice": 0,
+      "deliveryCouponPrice": 0,
+      "exceedFeeIncrease": 0,
+      "exceedDistance": 0,
+      "deliveryThreshold": 0,
+      "rideDistance": 0
+    },
+    "needBoxCount": 6,
+    "totalTaxFee": 0,
+    "taxFeeInfo": [],
+    "taxShowRule": {
+      "showTaxRateInMenu": true,
+      "showTaxRateInBill": false
+    }
+  }
 }

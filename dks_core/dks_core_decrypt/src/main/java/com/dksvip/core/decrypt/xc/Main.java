@@ -2,6 +2,7 @@ package com.dksvip.core.decrypt.xc;
 
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 
 /**
  * @author zhangcan
@@ -17,7 +18,7 @@ public class Main {
 //        JSONObject shopCategories = xcApi.getMenuCategories(0, 3161);
 //        System.out.println("shopCategories = " + shopCategories);
 //
-//        JSONObject productInfo = xcApi.getProductInfo("0", "0", "7019", "3161");
+//        JSONObject productInfo = xcApi.getProductInfo("0", "0", "7214", "3161");
 //        System.out.println("productInfo = " + productInfo);
 
 //        System.out.println(xcApi.getComboInfo("7366", "3161"));
@@ -52,7 +53,36 @@ public class Main {
 //       JSONObject response4 = xcApi.getExchangeCard("TTT","TTT");
 //        System.out.println(response4);
 
-
+//        JSONObject jsonObject = JSONUtil.parseObj("{\n" +
+//                "  \"shopId\": 3161,\n" +
+//                "  \"isTakeaway\": false,\n" +
+//                "  \"pmsData\": {\n" +
+//                "    \"10041002\": {\n" +
+//                "      \"clientScene\": 1,\n" +
+//                "      \"isStudentMember\": false,\n" +
+//                "      \"timestamp\": 1733296883070,\n" +
+//                "      \"isMemberPlus\": false\n" +
+//                "    },\n" +
+//                "    \"10041003\": {\n" +
+//                "      \"benefitNos\": \"\"\n" +
+//                "    }\n" +
+//                "  },\n" +
+//                "  \"benefitNos\": [],\n" +
+//                "  \"isStudentMember\": false,\n" +
+//                "  \"isChoosedBag\": false,\n" +
+//                "  \"optionFrom\": 0,\n" +
+//                "  \"cartItem\": {\n" +
+//                "    \"uniqueNo\": \"s:|30400360|19999005,19999011,19999137,19999435,19999508,19999964|||\",\n" +
+//                "    \"productId\": 7214,\n" +
+//                "    \"quantity\": 0\n" +
+//                "  },\n" +
+//                "  \"editType\": -1,\n" +
+//                "  \"rideDistance\": null,\n" +
+//                "  \"couponItems\": []\n" +
+//                "}");
+//        jsonObject.putOnce("action", "delete");
+//        JSONObject response5 = xcApi.getCart(jsonObject);
+//        System.out.println(response5);
 
 
     }
