@@ -440,12 +440,12 @@ public class XcApiImpl implements XcApi {
     public JSONObject getCart() {
         String PostUrl = API_URL + "service-cart/vip/grayapi/cart/person3/edit";
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("shopId",shopId);
-        jsonObject.put("isTakeaway",isTakeaway);
-        Map<String, Map<String, Object>> pmsData = new HashMap<>();
-        jsonObject.put("pmsData",pmsData);
+//        jsonObject.put("shopId",shopId);
+//        jsonObject.put("isTakeaway",isTakeaway);
+//        Map<String, Map<String, Object>> pmsData = new HashMap<>();
+//        jsonObject.put("pmsData",pmsData);
 
-
+return  null;
     }
 
 

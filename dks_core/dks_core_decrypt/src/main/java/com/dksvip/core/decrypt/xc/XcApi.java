@@ -78,6 +78,6 @@ public interface XcApi {
     /*
     更新购物车（既可以添加也可以删除，返回的结果为购物车列表）
      */
-    JSONObject getCart(int shopId,boolean isTakeaway,);
+    JSONObject getCart();
 
 }
