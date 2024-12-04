@@ -338,7 +338,6 @@ public class XcApiImpl implements XcApi {
         //additionalHeaders.put("Content-Length","14");
         return client.sendPostRequest(PostUrl, jsonObject, additionalHeaders);
 
-
     }
 
     /**
