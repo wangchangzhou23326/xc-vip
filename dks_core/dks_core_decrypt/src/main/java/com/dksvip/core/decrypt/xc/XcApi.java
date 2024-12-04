@@ -99,4 +99,5 @@ public interface XcApi {
      * 支付宝登录
      */
     String getLogin(String authCode);
+
 }

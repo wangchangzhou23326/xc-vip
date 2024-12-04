@@ -1,8 +1,5 @@
 package com.dksvip.core.decrypt.xc;
 
-import cn.hutool.json.JSONArray;
-import cn.hutool.json.JSONObject;
-
 /**
  * @author zhangcan
  * @date 2024/11/29 12:07
@@ -85,7 +82,7 @@ public class Main {
 //        System.out.println(xcApi.getUserAddressList());
 
 
-//        System.out.println(xcApi.getUserInfo());
-        System.out.println(xcApi.getLogin(null));
+        System.out.println(xcApi.getUserInfo());
+//        System.out.println(xcApi.getLogin(null));
     }
 }

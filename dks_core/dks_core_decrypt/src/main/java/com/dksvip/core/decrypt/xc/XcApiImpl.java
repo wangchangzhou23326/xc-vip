@@ -213,7 +213,7 @@ public class XcApiImpl implements XcApi {
         additionalHeaders.put("gmt-zone", "+08:00");
         additionalHeaders.put("accept", "application/prs.heytea.v1+json");
         // authorization 授权 --- 有时效性
-        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMxOTc1NTAsIm5iZiI6MTczMzE5NzU1MCwiZXhwIjoxNzMzMjgzOTUwLCJpc3MiOiJoZXl0ZWEifQ.3WwvAbm-ucoPL8OEFSCs7cWs23Qe8XehOGGj6rW4icI");
+        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2NTc5MjI4IiwidXNlcl9tYWluX2lkIjo3NjgzOTExMiwiY2hhbm5lbCI6IloiLCJzb3VyY2UiOiJhcGkiLCJpc19ndWVzdCI6ZmFsc2UsImxhYmVsIjoiY2xpZW50OmFsaXBheSIsImlhdCI6MTczMzMwMDg3MywibmJmIjoxNzMzMzAwODczLCJleHAiOjE3MzMzODcyNzMsImlzcyI6ImhleXRlYSJ9.HoJm3zqHXwBKLDWgxyqFCos7MnHedOd1asW40-JWWlc");
         additionalHeaders.put("x-region-id", "10");
         additionalHeaders.put("x-client", "alipay");
         additionalHeaders.put("client", "3");
@@ -539,7 +539,7 @@ public class XcApiImpl implements XcApi {
 //        additionalHeaders.put("gmt-zone", "+08:00");
 //        additionalHeaders.put("accept", "application/prs.heytea.v1+json");
         // authorization 授权 --- 有时效性
-        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2NTc5MjI4IiwidXNlcl9tYWluX2lkIjo3NjgzOTExMiwiY2hhbm5lbCI6IloiLCJzb3VyY2UiOiJhcGkiLCJpc19ndWVzdCI6ZmFsc2UsImxhYmVsIjoiY2xpZW50OmFsaXBheSIsImlhdCI6MTczMzI5MDQwMSwibmJmIjoxNzMzMjkwNDAxLCJleHAiOjE3MzMzNzY4MDEsImlzcyI6ImhleXRlYSJ9.Z3PI7AcbLS2rydoXVatqljfgnlOqSi_E2shF_H3iRUE");
+        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMzMDI1MTEsIm5iZiI6MTczMzMwMjUxMSwiZXhwIjoxNzMzMzg4OTExLCJpc3MiOiJoZXl0ZWEifQ.OlgsVEUOKLbwBl9tt2zSALP46N3KzCLwWnzrg3y5kbI");
 //        additionalHeaders.put("x-region-id", "10");
 //        additionalHeaders.put("x-client", "alipay");
 //        additionalHeaders.put("client", "3");
@@ -596,7 +596,7 @@ public class XcApiImpl implements XcApi {
         body.set("client", "alipay");
         body.set("loginType", "MINI");
         body.set("brand", "1000001");
-        body.set("authCode", "d2b0f903cd144b6398c4f8bebf3ePF86");
+        body.set("authCode", "e102c502675a4113946a26a353d6TX59");
         OkHttpClient okHttpClient = new OkHttpClient();
         RequestBody jsonBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), body.toString());
         Request request = new Request.Builder()
@@ -610,7 +610,7 @@ public class XcApiImpl implements XcApi {
 
             }
             String responseBody = response.body().string();
-            return "Bearer" + new JSONObject(responseBody).getJSONObject("data").get("token");
+            return "Bearer " + new JSONObject(responseBody).getJSONObject("data").get("token");
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
