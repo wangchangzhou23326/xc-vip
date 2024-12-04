@@ -2,7 +2,6 @@ package com.dksvip.core.decrypt.xc;
 
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
-import cn.hutool.json.JSONUtil;
 
 /**
  * @author zhangcan
@@ -18,7 +17,7 @@ public class Main {
 //        JSONObject shopCategories = xcApi.getMenuCategories(0, 3161);
 //        System.out.println("shopCategories = " + shopCategories);
 //
-//        JSONObject productInfo = xcApi.getProductInfo("0", "0", "7214", "3161");
+//        JSONObject productInfo = xcApi.getProductInfo("0", "0", "7019", "3161");
 //        System.out.println("productInfo = " + productInfo);
 
 //        System.out.println(xcApi.getComboInfo("7366", "3161"));
@@ -83,7 +82,10 @@ public class Main {
 //        jsonObject.putOnce("action", "delete");
 //        JSONObject response5 = xcApi.getCart(jsonObject);
 //        System.out.println(response5);
+//        System.out.println(xcApi.getUserAddressList());
 
 
+//        System.out.println(xcApi.getUserInfo());
+        System.out.println(xcApi.getLogin(null));
     }
 }
