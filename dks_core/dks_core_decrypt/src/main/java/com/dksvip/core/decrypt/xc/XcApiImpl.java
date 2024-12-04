@@ -433,9 +433,20 @@ public class XcApiImpl implements XcApi {
         additionalHeaders.put("Content-Length", "34");
         additionalHeaders.put("User-Agent", "Mozilla/5.0 (Linux; U; Android 11; zh-CN; MI 8 Lite Build/RKQ1.200826.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 UWS/3.22.2.66 Mobile Safari/537.36 UCBS/3.22.2.66_230817192043 ChannelId(4) NebulaSDK/1.8.100112 Nebula AlipayDefined(nt:WIFI,ws:393|0|2.75) AliApp(AP/10.5.26.8000) AlipayClient/10.5.26.8000 Language/zh-Hans useStatusBar/true isConcaveScreen/true Region/CNAriver/1.0.0 DTN/2.0");
         return client.sendPostRequest(PostUrl, jsonObject, additionalHeaders);
+
     }
 
+    @Override
+    public JSONObject getCart() {
+        String PostUrl = API_URL + "service-cart/vip/grayapi/cart/person3/edit";
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("shopId",shopId);
+        jsonObject.put("isTakeaway",isTakeaway);
+        Map<String, Map<String, Object>> pmsData = new HashMap<>();
+        jsonObject.put("pmsData",pmsData);
 
+
+    }
 
 
 //    public static void main(String[] args) {
