@@ -14,9 +14,6 @@ import java.util.Map;
  * @date 2024/11/14 15:43
  */
 public class DkcUtil {
-
-
-
     public static String getSHA256Hash(String input) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");

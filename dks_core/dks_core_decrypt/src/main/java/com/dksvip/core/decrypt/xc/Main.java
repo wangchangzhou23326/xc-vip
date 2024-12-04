@@ -1,7 +1,5 @@
 package com.dksvip.core.decrypt.xc;
 
-import cn.hutool.json.JSONObject;
-
 /**
  * @author zhangcan
  * @date 2024/11/29 12:07
@@ -16,8 +14,10 @@ public class Main {
 //        JSONObject shopCategories = xcApi.getMenuCategories(0, 3161);
 //        System.out.println("shopCategories = " + shopCategories);
 //
-//        JSONObject productInfo = xcApi.getProductInfo(0, 0, 7136, 3161);
+//        JSONObject productInfo = xcApi.getProductInfo("0", "0", "7019", "3161");
 //        System.out.println("productInfo = " + productInfo);
+
+        System.out.println(xcApi.getComboInfo("7366", "3161"));
 
 
 //        System.out.println(xcApi.getUsableScore());
@@ -28,7 +28,7 @@ public class Main {
 //        System.out.println(xcApi.getLogo());
 
 
-        System.out.println(xcApi.exchangeCouponsByCode("1000010010"));
+//        System.out.println(xcApi.exchangeCouponsByCode("1000010010"));
       //        JSONObject response = xcApi.getLocationShpo("114.278045,30.71089",3161,0);
 //        System.out.println(response);
 
@@ -46,8 +46,10 @@ public class Main {
 //       JSONObject  response3 = xcApi.getNearShop("10000","114.278279%2C30.710764","114.278279%2C30.710764");
 //        System.out.println(response3);
 //
-       JSONObject response4 = xcApi.getExchangeCard("TTT","TTT");
-        System.out.println(response4);
+//       JSONObject response4 = xcApi.getExchangeCard("TTT","TTT");
+//        System.out.println(response4);
+
+
 
 
     }
