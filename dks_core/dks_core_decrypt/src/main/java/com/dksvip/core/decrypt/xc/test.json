@@ -3,47 +3,458 @@
   "message": "SUCCESS",
   "requestId": null,
   "data": {
-    "records": [
+    "products": [
       {
-        "id": 1201737613,
-        "use_limit": 0,
-        "useLimit": 0,
-        "unitIndex": 0,
-        "threshold": "订单金额满1元可享8.8折,最高优惠8元",
-        "tab": 0,
-        "status": 1,
-        "lock": false,
-        "time_gray": 1,
-        "timeGray": 1,
-        "app_id": "100001",
-        "appId": "100001",
-        "inspirationTab": false,
-        "productLimitType": 0,
-        "source": 42,
-        "name": "新人福利-整单88折券",
-        "couponNo": "TN2024011601528",
-        "couponLibraryNo": "TN2024011601528202412010000002151",
-        "couponType": 3,
-        "thresholdText": "满1元可用",
-        "discountText": "8.8",
-        "discountUnit": "折",
-        "periodColor": 0,
-        "periodText": "有效期至 2024.12.31",
-        "upLimitText": "最高抵扣8元",
-        "bizLabels": [],
-        "isNew": 0,
-        "period_start": "2024-12-01",
-        "period_end": "2024-12-31",
-        "type_num": 3,
-        "soon_expire": false,
-        "expire_content": "有效期至2024.12.31 23:59",
-        "expire_flag": 0,
-        "available_rule": "满1元可用"
+        "product_id": 7019,
+        "skus": [
+          {
+            "id": 12153,
+            "name": "热水牛乳双拼波波",
+            "is_actived": 1,
+            "no": "32000102",
+            "specifications": "",
+            "price": "19.00",
+            "stock": -1,
+            "sort": 1,
+            "is_enable": 1,
+            "appointable": false,
+            "images": [],
+            "type": 0,
+            "is_join_queue": 1,
+            "is_now_making": 1,
+            "materials": [
+              {
+                "id": 82,
+                "exclusive": [],
+                "is_selected": false,
+                "takeaway_sort": 1,
+                "group_name": "状态",
+                "group_icon": "",
+                "tableware_label_type": 0,
+                "is_mandatory": 1,
+                "is_multi_select": 0,
+                "multi_number": 1,
+                "sort": 1,
+                "values": [
+                  {
+                    "id": 2364,
+                    "name": "比较烫",
+                    "price": "0.00",
+                    "un_include_tax_price": 0,
+                    "include_take_self_tax_price": 0,
+                    "stock": -1,
+                    "is_enable": 1,
+                    "no": "19999602",
+                    "exclusive": [
+                      {
+                        "group_id": 1,
+                        "exclusive_type": 1,
+                        "data": [
+                          {
+                            "exclusive_id": 1728
+                          },
+                          {
+                            "exclusive_id": 3394
+                          },
+                          {
+                            "exclusive_id": 2882
+                          },
+                          {
+                            "exclusive_id": 548
+                          },
+                          {
+                            "exclusive_id": 3430
+                          },
+                          {
+                            "exclusive_id": 1994
+                          },
+                          {
+                            "exclusive_id": 2730
+                          },
+                          {
+                            "exclusive_id": 1611
+                          },
+                          {
+                            "exclusive_id": 2859
+                          },
+                          {
+                            "exclusive_id": 2796
+                          },
+                          {
+                            "exclusive_id": 2238
+                          }
+                        ]
+                      }
+                    ],
+                    "meta_type": 0,
+                    "is_selected": true,
+                    "note": "",
+                    "instructions": "",
+                    "icon": "",
+                    "group_exclusive": [
+                      3
+                    ],
+                    "takeaway_sort": 1,
+                    "tableware_label_type": 1,
+                    "sort": 1,
+                    "values": [],
+                    "is_show_recommend_tag": false
+                  },
+                  {
+                    "id": 2365,
+                    "name": "温",
+                    "price": "0.00",
+                    "un_include_tax_price": 0,
+                    "include_take_self_tax_price": 0,
+                    "stock": -1,
+                    "is_enable": 1,
+                    "no": "19999019",
+                    "exclusive": [
+                      {
+                        "group_id": 1,
+                        "exclusive_type": 1,
+                        "data": [
+                          {
+                            "exclusive_id": 1728
+                          },
+                          {
+                            "exclusive_id": 3394
+                          },
+                          {
+                            "exclusive_id": 2882
+                          },
+                          {
+                            "exclusive_id": 548
+                          },
+                          {
+                            "exclusive_id": 3430
+                          },
+                          {
+                            "exclusive_id": 1994
+                          },
+                          {
+                            "exclusive_id": 2730
+                          },
+                          {
+                            "exclusive_id": 1611
+                          },
+                          {
+                            "exclusive_id": 2859
+                          },
+                          {
+                            "exclusive_id": 2796
+                          },
+                          {
+                            "exclusive_id": 2238
+                          }
+                        ]
+                      }
+                    ],
+                    "meta_type": 0,
+                    "is_selected": false,
+                    "note": "",
+                    "instructions": "",
+                    "icon": "",
+                    "group_exclusive": [
+                      3
+                    ],
+                    "takeaway_sort": 2,
+                    "tableware_label_type": 1,
+                    "sort": 2,
+                    "values": [],
+                    "is_show_recommend_tag": false
+                  }
+                ]
+              },
+              {
+                "id": 4,
+                "exclusive": [],
+                "is_selected": false,
+                "takeaway_sort": 2,
+                "group_name": "甜度",
+                "group_icon": "",
+                "tableware_label_type": 0,
+                "is_mandatory": 1,
+                "is_multi_select": 0,
+                "multi_number": 1,
+                "sort": 2,
+                "values": [
+                  {
+                    "id": 47,
+                    "name": "少甜(推荐)",
+                    "price": "0.00",
+                    "un_include_tax_price": 0,
+                    "include_take_self_tax_price": 0,
+                    "stock": -1,
+                    "is_enable": 1,
+                    "no": "19999005",
+                    "exclusive": [],
+                    "meta_type": 0,
+                    "is_selected": true,
+                    "note": "",
+                    "instructions": "",
+                    "icon": "",
+                    "group_exclusive": [],
+                    "takeaway_sort": 3,
+                    "tableware_label_type": 1,
+                    "sort": 3,
+                    "values": [],
+                    "is_show_recommend_tag": false
+                  },
+                  {
+                    "id": 48,
+                    "name": "少少甜",
+                    "price": "0.00",
+                    "un_include_tax_price": 0,
+                    "include_take_self_tax_price": 0,
+                    "stock": -1,
+                    "is_enable": 1,
+                    "no": "19999002",
+                    "exclusive": [],
+                    "meta_type": 0,
+                    "is_selected": false,
+                    "note": "",
+                    "instructions": "",
+                    "icon": "",
+                    "group_exclusive": [],
+                    "takeaway_sort": 4,
+                    "tableware_label_type": 1,
+                    "sort": 4,
+                    "values": [],
+                    "is_show_recommend_tag": false
+                  },
+                  {
+                    "id": 138,
+                    "name": "少少少甜",
+                    "price": "0.00",
+                    "un_include_tax_price": 0,
+                    "include_take_self_tax_price": 0,
+                    "stock": -1,
+                    "is_enable": 1,
+                    "no": "19999001",
+                    "exclusive": [],
+                    "meta_type": 0,
+                    "is_selected": false,
+                    "note": "",
+                    "instructions": "",
+                    "icon": "",
+                    "group_exclusive": [],
+                    "takeaway_sort": 5,
+                    "tableware_label_type": 1,
+                    "sort": 5,
+                    "values": [],
+                    "is_show_recommend_tag": false
+                  },
+                  {
+                    "id": 3564,
+                    "name": "不另外加黑糖(不推荐)",
+                    "price": "0.00",
+                    "un_include_tax_price": 0,
+                    "include_take_self_tax_price": 0,
+                    "stock": -1,
+                    "is_enable": 1,
+                    "no": "19999006",
+                    "exclusive": [],
+                    "meta_type": 0,
+                    "is_selected": false,
+                    "note": "",
+                    "instructions": "",
+                    "icon": "",
+                    "group_exclusive": [],
+                    "takeaway_sort": 6,
+                    "tableware_label_type": 1,
+                    "sort": 6,
+                    "values": [],
+                    "is_show_recommend_tag": false
+                  },
+                  {
+                    "id": 2634,
+                    "name": "多甜",
+                    "price": "0.00",
+                    "un_include_tax_price": 0,
+                    "include_take_self_tax_price": 0,
+                    "stock": -1,
+                    "is_enable": 1,
+                    "no": "19999004",
+                    "exclusive": [],
+                    "meta_type": 0,
+                    "is_selected": false,
+                    "note": "",
+                    "instructions": "",
+                    "icon": "",
+                    "group_exclusive": [],
+                    "takeaway_sort": 7,
+                    "tableware_label_type": 1,
+                    "sort": 7,
+                    "values": [],
+                    "is_show_recommend_tag": false
+                  }
+                ]
+              },
+              {
+                "id": 12,
+                "exclusive": [],
+                "is_selected": false,
+                "takeaway_sort": 3,
+                "group_name": "做法",
+                "group_icon": "",
+                "tableware_label_type": 0,
+                "is_mandatory": 1,
+                "is_multi_select": 0,
+                "multi_number": 1,
+                "sort": 3,
+                "values": [
+                  {
+                    "id": 232,
+                    "name": "标准(推荐)",
+                    "price": "0.00",
+                    "un_include_tax_price": 0,
+                    "include_take_self_tax_price": 0,
+                    "stock": -1,
+                    "is_enable": 1,
+                    "no": "19999436",
+                    "exclusive": [],
+                    "meta_type": 0,
+                    "is_selected": true,
+                    "note": "",
+                    "instructions": "",
+                    "icon": "",
+                    "group_exclusive": [],
+                    "takeaway_sort": 8,
+                    "tableware_label_type": 1,
+                    "sort": 8,
+                    "values": [],
+                    "is_show_recommend_tag": false
+                  },
+                  {
+                    "id": 3375,
+                    "name": "去云顶",
+                    "price": "0.00",
+                    "un_include_tax_price": 0,
+                    "include_take_self_tax_price": 0,
+                    "stock": -1,
+                    "is_enable": 1,
+                    "no": "19999125",
+                    "exclusive": [
+                      {
+                        "group_id": 1,
+                        "exclusive_type": 1,
+                        "data": [
+                          {
+                            "exclusive_id": 1325
+                          },
+                          {
+                            "exclusive_id": 1330
+                          },
+                          {
+                            "exclusive_id": 3571
+                          }
+                        ]
+                      }
+                    ],
+                    "meta_type": 0,
+                    "is_selected": false,
+                    "note": "",
+                    "instructions": "",
+                    "icon": "",
+                    "group_exclusive": [],
+                    "takeaway_sort": 9,
+                    "tableware_label_type": 1,
+                    "sort": 9,
+                    "values": [],
+                    "is_show_recommend_tag": false
+                  }
+                ]
+              },
+              {
+                "id": 27,
+                "exclusive": [],
+                "is_selected": false,
+                "takeaway_sort": 4,
+                "group_name": "绿色喜茶",
+                "group_icon": "https://go.cdn.heytea.com/storage/product/2021/12/13/1809f1c06dac41de8e85f13831a6f042.jpg",
+                "icon_type": 483549,
+                "tableware_label_type": 0,
+                "is_mandatory": 1,
+                "is_multi_select": 0,
+                "multi_number": 2,
+                "sort": 4,
+                "values": [
+                  {
+                    "id": 1835,
+                    "name": "可降解吸管",
+                    "price": "0.00",
+                    "un_include_tax_price": 0,
+                    "include_take_self_tax_price": 0,
+                    "stock": -1,
+                    "is_enable": 1,
+                    "no": "19999508",
+                    "exclusive": [],
+                    "meta_type": 0,
+                    "is_selected": true,
+                    "note": "",
+                    "instructions": "",
+                    "icon": "",
+                    "group_exclusive": [],
+                    "takeaway_sort": 10,
+                    "tableware_label_type": 1,
+                    "sort": 10,
+                    "values": [],
+                    "is_show_recommend_tag": false
+                  },
+                  {
+                    "id": 410,
+                    "name": "不使用吸管",
+                    "price": "0.00",
+                    "un_include_tax_price": 0,
+                    "include_take_self_tax_price": 0,
+                    "stock": -1,
+                    "is_enable": 1,
+                    "no": "19999268",
+                    "exclusive": [],
+                    "meta_type": 0,
+                    "is_selected": false,
+                    "note": "",
+                    "instructions": "",
+                    "icon": "",
+                    "group_exclusive": [],
+                    "takeaway_sort": 11,
+                    "tableware_label_type": 1,
+                    "sort": 11,
+                    "values": [],
+                    "is_show_recommend_tag": false
+                  }
+                ]
+              }
+            ],
+            "tax_rate": 0.06,
+            "un_include_tax_price": 17.92,
+            "support_reverse_election": false,
+            "take_self_rate": 0,
+            "include_take_self_tax_price": 17.92,
+            "miss_replace_material_groups": [],
+            "miss_custom_group_or_materials": [],
+            "add_custom_group_or_materials": [],
+            "tips_types": [
+              2147483647
+            ],
+            "has_custom_material": false,
+            "has_recommend_material": false,
+            "has_wrap": false,
+            "tips": "success",
+            "is_show_rec_button": false
+          }
+        ],
+        "videos": [],
+        "specifications": [],
+        "product_tags": [],
+        "new_product_is": 0,
+        "link_wechat_status_activity_id": 0,
+        "is_link_wechat_status": false,
+        "is_small_material": false
       }
     ],
-    "total": 1,
-    "size": 10,
-    "current": 1,
-    "pages": 1
+    "is_open_custom_taste_switch": false,
+    "is_open_recommend_taste_switch": false
   }
 }

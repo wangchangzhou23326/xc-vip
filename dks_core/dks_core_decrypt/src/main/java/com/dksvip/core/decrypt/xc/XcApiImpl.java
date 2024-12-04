@@ -33,7 +33,7 @@ public class XcApiImpl implements XcApi {
      * @return
      */
     @Override
-    public JSONObject getMenuCategories(Integer isTakeaway, Integer shopId) {
+    public JSONObject getMenuCategories(String isTakeaway, String shopId) {
         String PostUrl = API_URL + "service-menu/grayapi/shop/categories?isTakeaway=" + isTakeaway + "&shopId=" + shopId;
         Map<String, String> additionalHeaders = new HashMap<>();
 //        additionalHeaders.put("Accept-Charset", "UTF-8");
@@ -69,7 +69,7 @@ public class XcApiImpl implements XcApi {
      * @return
      */
     @Override
-    public JSONObject getProductInfo(Integer isTakeaway, Integer menuType, Integer productIds, Integer shopId) {
+    public JSONObject getProductInfo(String isTakeaway, String menuType, String productIds, String shopId) {
         String url = API_URL + "service-menu/vip/grayapi/v4/shop/product-info?isTakeaway=" + isTakeaway + "&menuType=" + menuType + "&productIds=" + productIds + "&shopId=" + shopId;
         Map<String, String> additionalHeaders = new HashMap<>();
 //        additionalHeaders.put("Accept-Charset","UTF-8");
@@ -93,6 +93,33 @@ public class XcApiImpl implements XcApi {
 //        additionalHeaders.put("Connection","Keep-Alive");
 //        additionalHeaders.put("Host","go.heytea.com");
         return client.sendGetRequest(url, additionalHeaders);
+    }
+
+    @Override
+    public JSONObject getComboInfo(String productIds, String shopId) {
+        String getUrl = String.format(API_URL + "service-menu/vip/grayapi/shop/combo-meal?productIds=%s&shopId=%s", productIds, shopId);
+        Map<String, String> additionalHeaders = new HashMap<>();
+//        additionalHeaders.put("Accept-Charset","UTF-8");
+//        additionalHeaders.put("referer","https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/index/index");
+//        additionalHeaders.put("accept-language","zh-CN");
+//        additionalHeaders.put("current-page","pages/index/index");
+//        additionalHeaders.put("client-version","308.0.0");
+//        additionalHeaders.put("x-release-type","ONLINE");
+//        additionalHeaders.put("version","5.1.37");
+//        additionalHeaders.put("gmt-zone","+08:00");
+//        additionalHeaders.put("accept","application/prs.heytea.v1+json");
+//        authorization 授权 --- 有时效性
+//        additionalHeaders.put("authorization","Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMxMjA2MDQsIm5iZiI6MTczMzEyMDYwNCwiZXhwIjoxNzMzMjA3MDA0LCJpc3MiOiJoZXl0ZWEifQ.otmT9-knCc0-pJcZe0nSQqP7gJaJfI1fH_cgLAiwfus");
+//        additionalHeaders.put("x-region-id","10");
+//        additionalHeaders.put("x-client","alipay");
+//        additionalHeaders.put("client","3");
+//        additionalHeaders.put("content-type","application/json");
+//        additionalHeaders.put("region","1");
+//        additionalHeaders.put("x-version","5.1.37");
+//        additionalHeaders.put("alipayMiniMark","nmD/fQQ1B9xRv7INmjacYZpPsIGWXJy+Kz5iCBw+3LwIYlvJrjV0se7oGNwW705T0gc9vm/Qjx3+ziRlQCQHYNXWAQAdBrVJ+kYqYLPb3jE=");
+//        additionalHeaders.put("Connection","Keep-Alive");
+//        additionalHeaders.put("Host","go.heytea.com");
+        return client.sendGetRequest(getUrl, additionalHeaders);
     }
 
     /**
@@ -174,7 +201,7 @@ public class XcApiImpl implements XcApi {
      * @return
      */
     @Override
-    public JSONObject getExchangeCouponList(Integer memberType, Integer page) {
+    public JSONObject getExchangeCouponList(String memberType, String page) {
         String getUrl = ViP_URL + "service-member/mall_product/productLst?member_type=" + memberType + "&page=" + page;
 
         Map<String, String> additionalHeaders = new HashMap<>();
@@ -314,7 +341,7 @@ public class XcApiImpl implements XcApi {
      * @return
      */
     @Override
-    public JSONObject getLocationShop(String location, int id, int type) {
+    public JSONObject getLocationShop(String location, String id, String type) {
         String PostUrl = API_URL + "service-smc/grayapi/user/closest/shop";
 
 

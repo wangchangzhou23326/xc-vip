@@ -14,8 +14,10 @@ public class Main {
 //        JSONObject shopCategories = xcApi.getMenuCategories(0, 3161);
 //        System.out.println("shopCategories = " + shopCategories);
 //
-//        JSONObject productInfo = xcApi.getProductInfo(0, 0, 7136, 3161);
+//        JSONObject productInfo = xcApi.getProductInfo("0", "0", "7019", "3161");
 //        System.out.println("productInfo = " + productInfo);
+
+        System.out.println(xcApi.getComboInfo("7366", "3161"));
 
 
 //        System.out.println(xcApi.getUsableScore());
@@ -46,6 +48,8 @@ public class Main {
 //
 //       JSONObject response4 = xcApi.getExchangeCard("TTT","TTT");
 //        System.out.println(response4);
+
+
 
 
     }
