@@ -52,8 +52,10 @@ public class Main {
 //       JSONObject response4 = xcApi.getExchangeCard("TTT","TTT");
 //        System.out.println(response4);
 
+//        System.out.println(xcApi.getUserAddressList());
 
 
-
+//        System.out.println(xcApi.getUserInfo());
+        System.out.println(xcApi.getLogin(null));
     }
 }
