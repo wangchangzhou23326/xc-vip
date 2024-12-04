@@ -90,16 +90,22 @@ public class XcOkHttpClient {
 
     public static HashMap<String, String> getHead(String body, Map<String, String> additionalHeaders) {
         HashMap<String, String> head = new HashMap<>();
-//        head.put("Accept-Charset","UTF-8");
-//        head.put("accept-language","zh-CN");
+        head.put("Accept-Charset", "UTF-8");
+        head.put("accept-language", "zh-CN");
 //        head.put("current-page","pages/index/index");
-//        head.put("client-version","306.0.0");
-//        head.put("x-release-type","ONLINE"); // 默认设备ID，可以根据需要修改或作为参数传入
-//        head.put("version","5.1.37");
-//        head.put("gmt-zone","+08:00");
+//      head.put("client-version","306.0.0");
+        head.put("x-release-type", "ONLINE"); // 默认设备ID，可以根据需要修改或作为参数传入
+        head.put("version", "5.1.37");
+        head.put("gmt-zone", "+08:00");
         head.put("Connection", "Keep-Alive");
         head.put("User-Agent", "Android_Ant_Client");
-//        head.put("acceptapplication","prs.heytea.v1+json");
+        head.put("acceptapplication", "prs.heytea.v1+json");
+        head.put("x-region-id","10");
+        head.put("x-client","alipay");
+        head.put("client","3");
+        head.put("content-type","application/json");
+        head.put("region","1");
+        head.put("Host","go.heytea.com");
 
         // 合并额外的请求头
         if (additionalHeaders != null) {

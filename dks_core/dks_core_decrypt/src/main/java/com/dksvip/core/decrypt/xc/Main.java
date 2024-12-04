@@ -1,5 +1,8 @@
 package com.dksvip.core.decrypt.xc;
 
+import cn.hutool.json.JSONArray;
+import cn.hutool.json.JSONObject;
+
 /**
  * @author zhangcan
  * @date 2024/11/29 12:07
@@ -41,7 +44,7 @@ public class Main {
 //        objects.add(3478);
 //        objects.add(3954);
 //
-//        JSONObject response2 = xcApi.getCurrentCity("156","156420100",new JSONArray(),3161,0,"114.279803,30.709717");
+//        JSONObject response2 = xcApi.getCurrentCity("156","156420100",new JSONArray(),3161,"0","114.279803,30.709717");
 //        System.out.println(response2);
 //       JSONObject  response3 = xcApi.getNearShop("10000","114.278279%2C30.710764","114.278279%2C30.710764");
 //        System.out.println(response3);

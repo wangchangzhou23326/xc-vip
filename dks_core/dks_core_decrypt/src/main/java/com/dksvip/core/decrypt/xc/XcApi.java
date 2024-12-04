@@ -63,7 +63,7 @@ public interface XcApi {
     /**
      * 当前城市的所有门店
      */
-    JSONObject getCurrentCity(String countryCode, String cityCode, List<Object> loadShopIds, int topShopId, String strategy, String userLocation);
+    JSONObject getCurrentCity(String countryCode, String cityCode, List<Object> loadShopIds,Integer  topShopId, String strategy, String userLocation);
 
     /**
      * 附近门店
@@ -78,6 +78,6 @@ public interface XcApi {
     /*
     更新购物车（既可以添加也可以删除，返回的结果为购物车列表）
      */
-    JSONObject getCart();
+    JSONObject getCart(JSONObject jsonObject);
 
 }
