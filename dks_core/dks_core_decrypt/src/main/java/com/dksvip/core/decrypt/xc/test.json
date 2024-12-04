@@ -1,11 +1,11 @@
 {
-  "shopId": 3814,
+  "shopId": 3161,
   "isTakeaway": false,
   "pmsData": {
     "10041002": {
       "clientScene": 1,
       "isStudentMember": false,
-      "timestamp": 1733274453740,
+      "timestamp": 1733278708017,
       "isMemberPlus": false
     },
     "10041003": {
@@ -15,13 +15,53 @@
   "benefitNos": [],
   "isStudentMember": false,
   "isChoosedBag": false,
-  "optionFrom": 0,
-  "cartItem": {
-    "uniqueNo": "s:|30400349|19999005,19999011,19999435,19999436,19999508|||",
-    "productId": 7136,
-    "quantity": 0
+  "optionFrom": 2,
+  "editType": 1,
+  "product": {
+    "type": 0,
+    "productId": 7213,
+    "seriesId": 52,
+    "quantity": 1,
+    "skuId": 12420,
+    "skuNo": "30400359",
+    "materials": [
+      {
+        "groupId": 82,
+        "id": 3235,
+        "no": "19999013"
+      },
+      {
+        "groupId": 4,
+        "id": 501,
+        "no": "19999005"
+      },
+      {
+        "groupId": 6,
+        "id": 3569,
+        "no": "19999348"
+      },
+      {
+        "groupId": 64,
+        "id": 1981,
+        "no": "19999205"
+      },
+      {
+        "groupId": 157,
+        "id": 2685,
+        "no": "19999964"
+      },
+      {
+        "groupId": 248,
+        "id": 2833,
+        "no": "19999436"
+      },
+      {
+        "groupId": 27,
+        "id": 1835,
+        "no": "19999508"
+      }
+    ]
   },
-  "editType": -1,
   "rideDistance": null,
   "couponItems": []
 }
