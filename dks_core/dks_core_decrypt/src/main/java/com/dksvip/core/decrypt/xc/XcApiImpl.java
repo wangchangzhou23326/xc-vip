@@ -28,7 +28,7 @@ public class XcApiImpl implements XcApi {
     private String API_URL = "https://go.heytea.com/api/";
 
     @Override
-    public JSONObject getMenuCategories(Integer isTakeaway, Integer shopId) {
+    public JSONObject getMenuCategories(String isTakeaway, String shopId) {
         String PostUrl = API_URL + "service-menu/grayapi/shop/categories?isTakeaway=" + isTakeaway + "&shopId=" + shopId;
         Map<String, String> additionalHeaders = new HashMap<>();
 //        additionalHeaders.put("Accept-Charset", "UTF-8");
@@ -55,7 +55,7 @@ public class XcApiImpl implements XcApi {
     }
 
     @Override
-    public JSONObject getProductInfo(Integer isTakeaway, Integer menuType, Integer productIds, Integer shopId) {
+    public JSONObject getProductInfo(String isTakeaway, String menuType, String productIds, String shopId) {
         String url = "https://go.heytea.com/api/service-menu/vip/grayapi/v4/shop/product-info?isTakeaway=" + isTakeaway + "&menuType=" + menuType + "&productIds=" + productIds + "&shopId=" + shopId;
         Map<String, String> additionalHeaders = new HashMap<>();
 //        additionalHeaders.put("Accept-Charset","UTF-8");
@@ -143,7 +143,7 @@ public class XcApiImpl implements XcApi {
     }
 
     @Override
-    public JSONObject getExchangeCouponList(Integer memberType, Integer page) {
+    public JSONObject getExchangeCouponList(String memberType, String page) {
         String getUrl = "https://vip.heytea.com/api/service-member/mall_product/productLst?member_type=" + memberType + "&page=" + page;
 
         Map<String, String> additionalHeaders = new HashMap<>();
@@ -352,7 +352,7 @@ public class XcApiImpl implements XcApi {
      * @return
      */
     @Override
-    public JSONObject getCurrentCity(String countryCode, String cityCode, List<Object> loadShopIds, int topShopId, Integer strategy, String userLocation) {
+    public JSONObject getCurrentCity(String countryCode, String cityCode, List<Object> loadShopIds, int topShopId, String strategy, String userLocation) {
         String PostUrl = API_URL + "service-smc/grayapi/city/shop-page";
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("country_code", countryCode);

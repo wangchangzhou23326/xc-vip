@@ -13,12 +13,12 @@ public interface XcApi {
     /**
      * 获取菜单分类及商品列表
      */
-    JSONObject getMenuCategories(Integer isTakeaway, Integer shopId);
+    JSONObject getMenuCategories(String isTakeaway, String shopId);
 
     /**
      * 获取商品详情
      */
-    JSONObject getProductInfo(Integer isTakeaway, Integer menuType, Integer productIds, Integer shopId);
+    JSONObject getProductInfo(String isTakeaway, String menuType, String productIds, String shopId);
 
     /**
      * 获取用户优惠券
@@ -38,7 +38,7 @@ public interface XcApi {
     /**
      * 获取(积分)兑换券列表
      */
-    JSONObject getExchangeCouponList(Integer memberType, Integer page);
+    JSONObject getExchangeCouponList(String memberType, String page);
 
     /**
      * 获取订单
@@ -63,7 +63,7 @@ public interface XcApi {
     /**
      * 当前城市的所有门店
      */
-    JSONObject getCurrentCity(String countryCode, String cityCode, List<Object> loadShopIds, int topShopId, Integer strategy, String userLocation);
+    JSONObject getCurrentCity(String countryCode, String cityCode, List<Object> loadShopIds, int topShopId, String strategy, String userLocation);
 
     /**
      * 附近门店

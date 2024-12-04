@@ -17,7 +17,7 @@ public class Main {
 //        JSONObject productInfo = xcApi.getProductInfo("0", "0", "7019", "3161");
 //        System.out.println("productInfo = " + productInfo);
 
-        System.out.println(xcApi.getComboInfo("7366", "3161"));
+//        System.out.println(xcApi.getComboInfo("7366", "3161"));
 
 
 //        System.out.println(xcApi.getUsableScore());
