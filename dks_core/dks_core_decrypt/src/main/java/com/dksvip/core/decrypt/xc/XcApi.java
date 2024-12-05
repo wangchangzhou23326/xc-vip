@@ -41,9 +41,14 @@ public interface XcApi {
     JSONObject getExchangeCouponList(String memberType, String page);
 
     /**
-     * 获取订单
+     * 获取所有订单
      */
     JSONObject getCurrentOrder();
+
+    /**
+     * 获取订单信息
+     */
+    JSONObject getOrderInfoByNo(String orderNo);
 
     /**
      * 兑换券兑换
@@ -79,6 +84,11 @@ public interface XcApi {
     更新购物车（既可以添加也可以删除，返回的结果为购物车列表）
      */
     JSONObject getCart(JSONObject jsonObject);
+
+    /**
+     * 获取购物车列表
+     */
+    JSONObject getCartList(JSONObject jsonObject);
 
     /**
      * 清空购物车

@@ -27,6 +27,7 @@ public class Main {
 
 //        System.out.println(xcApi.getLogo());
 
+//        System.out.println(xcApi.getUserCoupon());
 
 //        System.out.println(xcApi.exchangeCouponsByCode("1000010010"));
       //        JSONObject response = xcApi.getLocationShpo("114.278045,30.71089",3161,0);
@@ -82,7 +83,11 @@ public class Main {
 //        System.out.println(xcApi.getUserAddressList());
 
 
-        System.out.println(xcApi.getUserInfo());
+//        System.out.println(xcApi.getUserInfo());
 //        System.out.println(xcApi.getLogin(null));
+
+//        JSONObject entries = JSONUtil.parseObj("{\"shopId\":4935,\"isTakeaway\":false,\"pmsData\":{\"10041002\":{\"clientScene\":1,\"isStudentMember\":false,\"timestamp\":1733361942895,\"isMemberPlus\":false},\"10041003\":{\"benefitNos\":\"\"}},\"benefitNos\":[],\"isStudentMember\":false,\"isChoosedBag\":false,\"rideDistance\":null,\"couponItems\":[]}");
+//        System.out.println(xcApi.getCartList(entries));
+        System.out.println(xcApi.getOrderInfoByNo("H1071374955536457729535"));
     }
 }

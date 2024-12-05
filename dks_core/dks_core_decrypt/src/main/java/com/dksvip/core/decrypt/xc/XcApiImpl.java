@@ -98,7 +98,7 @@ public class XcApiImpl implements XcApi {
         additionalHeaders.put("gmt-zone", "+08:00");
         additionalHeaders.put("accept", "application/prs.heytea.v1+json");
         // authorization 授权 --- 有时效性
-        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMxMjgzMTksIm5iZiI6MTczMzEyODMxOSwiZXhwIjoxNzMzMjE0NzE5LCJpc3MiOiJoZXl0ZWEifQ.KrkA0btGVmmhLdgLgqZbwawslExRBLsr9MkslE3e58Y");
+        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMzNjQwMzYsIm5iZiI6MTczMzM2NDAzNiwiZXhwIjoxNzMzNDUwNDM2LCJpc3MiOiJoZXl0ZWEifQ.KRL-eX85Qb3uCjRJP3emRiv4YsZjuzfneHvx0i3q8ZY");
         additionalHeaders.put("x-region-id", "10");
         additionalHeaders.put("x-client", "alipay");
         additionalHeaders.put("client", "3");
@@ -224,6 +224,33 @@ public class XcApiImpl implements XcApi {
         additionalHeaders.put("User-Agent", "Mozilla/5.0 (Linux; U; Android 11; zh-CN; MI 8 Lite Build/RKQ1.200826.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 UWS/3.22.2.66 Mobile Safari/537.36 UCBS/3.22.2.66_230817192043 ChannelId(8) NebulaSDK/1.8.100112 Nebula AlipayDefined(nt:WIFI,ws:393|0|2.75) AliApp(AP/10.5.26.8000) AlipayClient/10.5.26.8000 Language/zh-Hans useStatusBar/true isConcaveScreen/true Region/CNAriver/1.0.0 DTN/2.0");
         additionalHeaders.put("Connection", "Keep-Alive");
         additionalHeaders.put("Host", "vip.heytea.com");
+        return client.sendGetRequest(getUrl, additionalHeaders);
+    }
+
+    @Override
+    public JSONObject getOrderInfoByNo(String orderNo) {
+        String getUrl = API_URL + "service-oms-order/grayapi/order/detail?orderNo=" + orderNo;
+        Map<String, String> additionalHeaders = new HashMap<>();
+//        additionalHeaders.put("Accept-Charset", "UTF-8");
+//        additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/code/order_detail/index?__appxPageId=7&orderNo=H1071374955536457729535");
+//        additionalHeaders.put("accept-language", "zh-CN");
+//        additionalHeaders.put("current-page", "pages/code/order_detail/index");
+//        additionalHeaders.put("client-version", "308.0.0");
+//        additionalHeaders.put("x-release-type", "ONLINE");
+//        additionalHeaders.put("version", "5.1.37");
+//        additionalHeaders.put("gmt-zone", "+08:00");
+//        additionalHeaders.put("accept", "application/prs.heytea.v1+json");
+        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMzNjUyODEsIm5iZiI6MTczMzM2NTI4MSwiZXhwIjoxNzMzNDUxNjgxLCJpc3MiOiJoZXl0ZWEifQ.zMO1d1iUt9dJIeXnYSjGJyTdGBhXPlq0Tus_nb6jodU");
+//        additionalHeaders.put("x-region-id", "10");
+//        additionalHeaders.put("x-client", "alipay");
+//        additionalHeaders.put("client", "3");
+//        additionalHeaders.put("content-type", "application/json");
+//        additionalHeaders.put("region", "1");
+//        additionalHeaders.put("x-version", "5.1.37");
+//        additionalHeaders.put("alipayMiniMark", "nmD/fQQ1B9xRv7INmjacYSzp3hpy0WkCwLTqygsBOX93KeGHw1ffw2GNTV0sexKhx5K0o7W135OVzEmu6o2lQVZ7kxKDx1saMFg3HldAAXQ=");
+//        additionalHeaders.put("User-Agent", "Mozilla/5.0 (Linux; U; Android 11; zh-CN; MI 8 Lite Build/RKQ1.200826.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 UWS/3.22.2.66 Mobile Safari/537.36 UCBS/3.22.2.66_230817192043 ChannelId(15) NebulaSDK/1.8.100112 Nebula AlipayDefined(nt:WIFI,ws:393|0|2.75) AliApp(AP/10.5.26.8000) AlipayClient/10.5.26.8000 Language/zh-Hans useStatusBar/true isConcaveScreen/true Region/CNAriver/1.0.0 DTN/2.0");
+//        additionalHeaders.put("Connection", "Keep-Alive");
+//        additionalHeaders.put("Host", "go.heytea.com");
         return client.sendGetRequest(getUrl, additionalHeaders);
     }
 
@@ -512,6 +539,40 @@ public class XcApiImpl implements XcApi {
 
     }
 
+    /**
+     * 获取购物车列表
+     *
+     * @param jsonObject
+     * @return
+     */
+    @Override
+    public JSONObject getCartList(JSONObject jsonObject) {
+        String postUrl = API_URL + "service-cart/vip/grayapi/cart/person3/detail";
+        Map<String, String> additionalHeaders = new HashMap<>();
+//        additionalHeaders.put("Accept-Charset", "UTF-8");
+//        additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/index/index");
+//        additionalHeaders.put("accept-language", "zh-CN");
+//        additionalHeaders.put("current-page", "pages/index/index");
+//        additionalHeaders.put("client-version", "308.0.0");
+//        additionalHeaders.put("x-release-type", "ONLINE");
+//        additionalHeaders.put("version", "5.1.37");
+//        additionalHeaders.put("gmt-zone", "+08:00");
+//        additionalHeaders.put("accept", "application/prs.heytea.v1+json");
+        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMzNjE5MDMsIm5iZiI6MTczMzM2MTkwMywiZXhwIjoxNzMzNDQ4MzAzLCJpc3MiOiJoZXl0ZWEifQ.dvnuU0yDVjLtNgMX65VgcmZQ2SFrgW3AKelzDR99It8");
+//        additionalHeaders.put("x-region-id", "10");
+//        additionalHeaders.put("x-client", "alipay");
+//        additionalHeaders.put("client", "3");
+//        additionalHeaders.put("content-type", "application/json");
+//        additionalHeaders.put("region", "1");
+//        additionalHeaders.put("x-version", "5.1.37");
+//        additionalHeaders.put("alipayMiniMark", "nmD/fQQ1B9xRv7INmjacYQfVXuGIuPL+kTHb98x4mWFQ7dFBIxl3shvTkuBLEfRVLyXij80BaVAs0zdBgfZFKhvCFy/GUbwgsPIpHn8llZY=");
+//        additionalHeaders.put("Content-Length", "273");
+//        additionalHeaders.put("User-Agent", "Mozilla/5.0 (Linux; U; Android 11; zh-CN; MI 8 Lite Build/RKQ1.200826.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 UWS/3.22.2.66 Mobile Safari/537.36 UCBS/3.22.2.66_230817192043 ChannelId(7) NebulaSDK/1.8.100112 Nebula AlipayDefined(nt:WIFI,ws: 393|0|2.75) AliApp(AP/10.5.26.8000) AlipayClient/10.5.26.8000 Language/zh-Hans useStatusBar/true isConcaveScreen/true Region/CNAriver/1.0.0 DTN/2.0");
+//        additionalHeaders.put("Connection", "Keep-Alive");
+//        additionalHeaders.put("Host", "go.heytea.com");
+        return client.sendPostRequest(postUrl, jsonObject, additionalHeaders);
+    }
+
     @Override
     public JSONObject clearCart(JSONObject jsonObject) {
         String PostUrl = API_URL + "service-cart/vip/grayapi/cart/person3/clear";
@@ -592,7 +653,7 @@ public class XcApiImpl implements XcApi {
     public String getLogin(String authCode) {
         String postUrl = API_URL + "service-login/openapi/vip/user/login_v1";
         JSONObject body = new JSONObject();
-        body.set("channel", "Z");
+        body.set("channel", "Z");// Z支付宝 W微信
         body.set("client", "alipay");
         body.set("loginType", "MINI");
         body.set("brand", "1000001");

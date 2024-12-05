@@ -41,4 +41,13 @@
 ## "service-cart/vip/grayapi/cart/person3/edit
 > 编辑购物车
 
+## service-cart/vip/grayapi/cart/person3/detail
+> 获取购物车列表
+> json-> {"shopId":4935,"isTakeaway":false,"pmsData":{"10041002":{"clientScene":1,"isStudentMember":false,"timestamp":1733361942895,"isMemberPlus":false},"10041003":{"benefitNos":""}},"benefitNos":[],"isStudentMember":false,"isChoosedBag":false,"rideDistance":null,"couponItems":[]}
+
+## service-cart/vip/grayapi/cart/person3/clear
+> 清空购物车
+> json-> {"shopId":3161,"isTakeaway":false,"pmsData":{"10041002":{"clientScene":1,"isStudentMember":false,"timestamp":1733297969923,"isMemberPlus":false},"10041003":{"benefitNos":""}},"benefitNos":[],"isStudentMember":false,"isChoosedBag":false,"clearType":1,"couponItems":[]}
+
+
 
