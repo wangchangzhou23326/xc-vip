@@ -49,5 +49,7 @@
 > 清空购物车
 > json-> {"shopId":3161,"isTakeaway":false,"pmsData":{"10041002":{"clientScene":1,"isStudentMember":false,"timestamp":1733297969923,"isMemberPlus":false},"10041003":{"benefitNos":""}},"benefitNos":[],"isStudentMember":false,"isChoosedBag":false,"clearType":1,"couponItems":[]}
 
-
+## service-member/vip/addresses
+> 添加地址
+> json-> {"addressChannel":1,"name":"包","phone":"sPIl4B1QPk0E39V9VV+2HQ==","cryptoLevel":2,"sex":"male","label":"公司","address":"名流人和天地润和园","complete_address":"湖北省武汉市黄陂区盘龙城开发区楚天大道特1号","description":"402 2 1601","latitude":"30.71178","longitude":"114.278164","citycode":"027","country":"中国","province":"湖北省","city":"武汉市","ad_code":"420116","district":"黄陂区","maintained":true}
 

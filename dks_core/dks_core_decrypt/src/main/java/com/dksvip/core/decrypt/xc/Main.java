@@ -82,12 +82,20 @@ public class Main {
 //        System.out.println(response5);
 //        System.out.println(xcApi.getUserAddressList());
 
+        System.out.println(xcApi.deleteAddress("79298020"));
 
 //        System.out.println(xcApi.getUserInfo());
 //        System.out.println(xcApi.getLogin(null));
 
 //        JSONObject entries = JSONUtil.parseObj("{\"shopId\":4935,\"isTakeaway\":false,\"pmsData\":{\"10041002\":{\"clientScene\":1,\"isStudentMember\":false,\"timestamp\":1733361942895,\"isMemberPlus\":false},\"10041003\":{\"benefitNos\":\"\"}},\"benefitNos\":[],\"isStudentMember\":false,\"isChoosedBag\":false,\"rideDistance\":null,\"couponItems\":[]}");
 //        System.out.println(xcApi.getCartList(entries));
-        System.out.println(xcApi.getOrderInfoByNo("H1071374955536457729535"));
+//        System.out.println(xcApi.getOrderInfoByNo("H1071374955536457729535"));
+
+//        System.out.println(xcApi.searchAddress("名流人和天地润和园402",1,"武汉"));
+
+//
+//        JSONObject entries = JSONUtil.parseObj("{\"addressChannel\":1,\"name\":\"包\",\"phone\":\"sPIl4B1QPk0E39V9VV+2HQ==\",\"cryptoLevel\":2,\"sex\":\"male\",\"label\":\"家\",\"address\":\"名流烧烤(名流人和天地润和园店)\",\"complete_address\":\"湖北省武汉市黄陂区盘龙城开发区楚天大道特1号名流人和天地润和园\",\"description\":\"402 2 1601\",\"latitude\":\"30.711592\",\"longitude\":\"114.277286\",\"citycode\":\"027\",\"country\":\"中国\",\"province\":\"湖北省\",\"city\":\"武汉市\",\"ad_code\":\"420116\",\"district\":\"黄陂区\",\"maintained\":true}");
+//        System.out.println(xcApi.addAddress(entries));
+
     }
 }

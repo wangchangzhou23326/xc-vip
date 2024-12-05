@@ -629,7 +629,7 @@ public class XcApiImpl implements XcApi {
 //        additionalHeaders.put("gmt-zone", "+08:00");
 //        additionalHeaders.put("accept", "application/prs.heytea.v1+json");
         // authorization 授权 --- 有时效性
-        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMyODE5NzgsIm5iZiI6MTczMzI4MTk3OCwiZXhwIjoxNzMzMzY4Mzc4LCJpc3MiOiJoZXl0ZWEifQ.8bpO4HAudB7cgFIykdv27xMJqDoCVH3yBnwZIVXchNo");
+        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMzNzA5OTUsIm5iZiI6MTczMzM3MDk5NSwiZXhwIjoxNzMzNDU3Mzk1LCJpc3MiOiJoZXl0ZWEifQ.uhVeecDT5K_iUXuVnSqofH6PukwcfIktG6wrwLL5UZE");
 //        additionalHeaders.put("x-region-id", "10");
 //        additionalHeaders.put("x-client", "alipay");
 //        additionalHeaders.put("client", "3");
@@ -641,6 +641,112 @@ public class XcApiImpl implements XcApi {
 //        additionalHeaders.put("Connection", "Keep-Alive");
 //        additionalHeaders.put("Host", "vip.heytea.com");
         return client.sendGetRequest(getUrl, additionalHeaders);
+    }
+
+    /**
+     * 搜索地址
+     * @param keywords
+     * @param page
+     * @param city
+     * @return
+     */
+    @Override
+    public JSONObject searchAddress(String keywords, Integer page, String city) {
+        String postUrl = API_URL + "service-delivery/grayapi/geography-search";
+        JSONObject body = new JSONObject();
+        body.set("keywords", keywords).set("page", page).set("city", city);
+        Map<String, String> additionalHeaders = new HashMap<>();
+//        additionalHeaders.put("Accept-Charset", "UTF-8");
+//        additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/index/cloud_settlement/select_address/index?__appxPageId=4&isSeckill=undefined");
+//        additionalHeaders.put("accept-language", "zh-CN");
+//        additionalHeaders.put("current-page", "pages/index/cloud_settlement/select_address/index");
+//        additionalHeaders.put("client-version", "308.0.0");
+//        additionalHeaders.put("x-release-type", "ONLINE");
+//        additionalHeaders.put("version", "5.1.37");
+//        additionalHeaders.put("gmt-zone", "+08:00");
+//        additionalHeaders.put("accept", "application/prs.heytea.v1+json");
+//        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMzNjYyNzEsIm5iZiI6MTczMzM2NjI3MSwiZXhwIjoxNzMzNDUyNjcxLCJpc3MiOiJoZXl0ZWEifQ.F_GHh9yY8eC1VznquUak3IYy149vCIETZFE43ppbPpc");
+//        additionalHeaders.put("x-region-id", "10");
+//        additionalHeaders.put("x-client", "alipay");
+//        additionalHeaders.put("client", "3");
+//        additionalHeaders.put("content-type", "application/json");
+//        additionalHeaders.put("region", "1");
+//        additionalHeaders.put("x-version", "5.1.37");
+//        additionalHeaders.put("alipayMiniMark", "nmD/fQQ1B9xRv7INmjacYegPHYo5YYHy4c94SErMzL6pzGnCHgk5ti3tAGEJmvPXGvKncsXJpwnQTonR75haSIApYWA+hgeZTtubNKA1uSs=");
+//        additionalHeaders.put("Content-Length", "55");
+//        additionalHeaders.put("User-Agent", "Mozilla/5.0 (Linux; U; Android 11; zh-CN; MI 8 Lite Build/RKQ1.200826.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 UWS/3.22.2.66 Mobile Safari/537.36 UCBS/3.22.2.66_230817192043 ChannelId(12) NebulaSDK/1.8.100112 Nebula AlipayDefined(nt:WIFI,ws:393|0|2.75) AliApp(AP/10.5.26.8000) AlipayClient/10.5.26.8000 Language/zh-Hans useStatusBar/true isConcaveScreen/true Region/CNAriver/1.0.0 DTN/2.0");
+//        additionalHeaders.put("Connection", "Keep-Alive");
+//        additionalHeaders.put("Host", "go.heytea.com");
+        return client.sendPostRequest(postUrl, body, additionalHeaders);
+    }
+
+    /**
+     * 添加地址
+     * @param jsonObject
+     * @return
+     */
+    @Override
+    public JSONObject addAddress(JSONObject jsonObject) {
+        String postUrl = API_URL + "service-member/vip/addresses";
+        Map<String, String> additionalHeaders = new HashMap<>();
+        additionalHeaders.put("Accept-Charset", "UTF-8");
+        additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/index/cloud_settlement/insert_address/index?__appxPageId=3&channelFrom=1");
+        additionalHeaders.put("accept-language", "zh-CN");
+        additionalHeaders.put("current-page", "pages/index/cloud_settlement/insert_address/index");
+        additionalHeaders.put("client-version", "308.0.0");
+        additionalHeaders.put("x-release-type", "ONLINE");
+        additionalHeaders.put("version", "5.1.37");
+        additionalHeaders.put("gmt-zone", "+08:00");
+        additionalHeaders.put("accept", "application/prs.heytea.v1+json");
+        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMzNjg0MTAsIm5iZiI6MTczMzM2ODQxMCwiZXhwIjoxNzMzNDU0ODEwLCJpc3MiOiJoZXl0ZWEifQ.m-Qi8idB4uujCLFsCvqzqtIU6w-7q2EO2XV857WKYsU");
+        additionalHeaders.put("x-region-id", "10");
+        additionalHeaders.put("x-client", "alipay");
+        additionalHeaders.put("client", "3");
+        additionalHeaders.put("content-type", "application/json");
+        additionalHeaders.put("region", "1");
+        additionalHeaders.put("x-version", "5.1.37");
+//        additionalHeaders.put("Accept-Encoding", "gzip");
+        additionalHeaders.put("alipayMiniMark", "nmD/fQQ1B9xRv7INmjacYbu3XWK7LiDWCR/7M/2W2APlSElYBGHwnFzxYxqTrfJjynMOco9saH8Q+fhKYv8GNlN5MCBVS7To7NiaMStTKRw=");
+        additionalHeaders.put("Content-Length", "452");
+        additionalHeaders.put("User-Agent", "Mozilla/5.0 (Linux; U; Android 11; zh-CN; MI 8 Lite Build/RKQ1.200826.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 UWS/3.22.2.66 Mobile Safari/537.36 UCBS/3.22.2.66_230817192043 ChannelId(11) NebulaSDK/1.8.100112 Nebula AlipayDefined(nt:WIFI,ws:393|0|2.75) AliApp(AP/10.5.26.8000) AlipayClient/10.5.26.8000 Language/zh-Hans useStatusBar/true isConcaveScreen/true Region/CNAriver/1.0.0 DTN/2.0");
+        additionalHeaders.put("Connection", "Keep-Alive");
+        additionalHeaders.put("Host", "go.heytea.com");
+        return client.sendPostRequest(postUrl, jsonObject, additionalHeaders);
+    }
+
+    /**
+     * 删除地址
+     * @param addressId
+     * @return
+     */
+    @Override
+    public JSONObject deleteAddress(String addressId) {
+        String postUrl = API_URL + "service-member/vip/addresses/delete/" + addressId;
+        Map<String, String> additionalHeaders = new HashMap<>();
+        additionalHeaders.put("Accept-Charset", "UTF-8");
+        additionalHeaders.put("referer", "https://2019032763715272.hybrid.alipay-eco.com/2019032763715272/0.2.2411292308.3/index.html#pages/index/cloud_settlement/shopping_address/index?__appxPageId=2");
+        additionalHeaders.put("accept-language", "zh-CN");
+        additionalHeaders.put("current-page", "pages/index/cloud_settlement/shopping_address/index");
+        additionalHeaders.put("client-version", "308.0.0");
+        additionalHeaders.put("x-release-type", "ONLINE");
+        additionalHeaders.put("version", "5.1.37");
+        additionalHeaders.put("gmt-zone", "+08:00");
+        additionalHeaders.put("accept", "application/prs.heytea.v1+json");
+        additionalHeaders.put("authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMDU2MjgzNzg5IiwidXNlcl9tYWluX2lkIjoxNTQyNTI1MzUsImNoYW5uZWwiOiJaIiwic291cmNlIjoiYXBpIiwiaXNfZ3Vlc3QiOmZhbHNlLCJsYWJlbCI6ImNsaWVudDphbGlwYXkiLCJpYXQiOjE3MzMzNzExMjcsIm5iZiI6MTczMzM3MTEyNywiZXhwIjoxNzMzNDU3NTI3LCJpc3MiOiJoZXl0ZWEifQ.wX-hu9hvTTEkRQajwxrGyGK8Hsa7xvvzVnvD-WCYxmE");
+        additionalHeaders.put("x-region-id", "10");
+        additionalHeaders.put("x-client", "alipay");
+        additionalHeaders.put("client", "3");
+        additionalHeaders.put("content-type", "application/json");
+        additionalHeaders.put("region", "1");
+        additionalHeaders.put("x-version", "5.1.37");
+//        additionalHeaders.put("Accept-Encoding", "gzip");
+        additionalHeaders.put("alipayMiniMark", "nmD/fQQ1B9xRv7INmjacYeCtTNXoAA+q2JrdnUv63XlKrMxUB2vajrzUuI8weHoyfzgxoftd2luEwawAfb//4NE+bxiOZZh8PH1sW/o4b+w=");
+        additionalHeaders.put("Content-Length", "2");
+        additionalHeaders.put("User-Agent", "Mozilla/5.0 (Linux; U; Android 11; zh-CN; MI 8 Lite Build/RKQ1.200826.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/69.0.3497.100 UWS/3.22.2.66 Mobile Safari/537.36 UCBS/3.22.2.66_230817192043 ChannelId(6) NebulaSDK/1.8.100112 Nebula AlipayDefined(nt:WIFI,ws:393|0|2.75) AliApp(AP/10.5.26.8000) AlipayClient/10.5.26.8000 Language/zh-Hans useStatusBar/true isConcaveScreen/true Region/CNAriver/1.0.0 DTN/2.0");
+        additionalHeaders.put("Connection", "Keep-Alive");
+        additionalHeaders.put("Host", "go.heytea.com");
+        JSONObject body = new JSONObject();
+        return client.sendPostRequest(postUrl, body, additionalHeaders);
     }
 
     /**

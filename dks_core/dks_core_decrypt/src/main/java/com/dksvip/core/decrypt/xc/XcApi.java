@@ -101,12 +101,27 @@ public interface XcApi {
     JSONObject getUserInfo();
 
     /**
-     * 获取用户下单地址列表
+     * 获取用户地址列表(用户保存的收货地址列表)
      */
     JSONObject getUserAddressList();
 
     /**
-     * 支付宝登录
+     * 搜索地址
+     */
+    JSONObject searchAddress(String keywords,Integer page,String city);
+
+    /**
+     * 添加地址
+     */
+    JSONObject addAddress(JSONObject jsonObject);
+
+    /**
+     * 删除地址
+     */
+    JSONObject deleteAddress(String addressId);
+
+    /**
+     * 支付宝登录（测试）
      */
     String getLogin(String authCode);
 
