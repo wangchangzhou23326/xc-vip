@@ -123,6 +123,10 @@ public interface XcApi {
     /**
      * 支付宝登录（测试）
      */
-    String getLogin(String authCode);
+//    String getLogin(String authCode);
 
+    /**
+     * 取消订单
+     */
+    JSONObject cancelOrder(String orderNo,String reason);
 }

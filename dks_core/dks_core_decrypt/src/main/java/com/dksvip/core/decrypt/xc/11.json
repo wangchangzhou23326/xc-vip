@@ -1,263 +1,80 @@
 {
-  "code": 0,
-  "message": "SUCCESS",
-  "requestId": null,
-  "data": {
-    "shopId": 3161,
-    "timeStat": {
-      "FilterClientProductFlow": 0,
-      "CheckAddProductItemFlow": 0,
-      "BuildNoSaleDtoFlow": 2,
-      "RemoveProductByUuidFlow": 0,
-      "FilterSaleSceneProductFlow": 0,
-      "BuildPersonCartDtoFlow": 3,
-      "async-SavePersonCartFlow": 0,
-      "BasePersonFlow": 0,
-      "WashMallProductFlow": 0,
-      "ClearNoSaleProductsOnCartFlow": 0,
-      "AddProductItemFlow": 0,
-      "LoadActivityRule2Flow": 6,
-      "BuildPersonCartVoFlow.preCalculatePoints": 5,
-      "PersonCallSettlementFlow": 43,
-      "CheckProductLimitFlow": 0,
-      "WashPersonProductFlow": 0,
-      "CheckShopStatus2Flow": 0,
-      "async-LoadMallProductsFlow": 0,
-      "BuildProductItemDtoFlow": 0,
-      "HandlePersonPackageBagFlow": 0
-    },
-    "cartMd5": "a2b6fea9ce220c2b4a5c10ab35f2b917",
-    "currency": "¥",
+  "apiOrderSubmitForm": {
+    "client": 3,
+    "include": "items",
+    "shop_id": 3161,
+    "address_id": 0,
+    "predict_time": 10,
+    "predict_cups": 11,
+    "predict_orders": 2,
+    "efficiency": 56,
+    "efficiency_time": 10,
+    "shop_limit_time": 0,
+    "pickup_time_period": "",
+    "period_id": null,
+    "phone": "13034487227",
+    "remarks": "",
+    "is_takeaway": 0,
+    "box_fee": 0,
+    "total_fee": 37.84,
     "products": [
       {
-        "type": 0,
-        "uniqueNo": "s:|30400360|19999005,19999011,19999137,19999435,19999508,19999964|||",
-        "uuid": "s:|30400360|19999005,19999011,19999137,19999435,19999508,19999964|||;-7214",
-        "productName": "水牛乳双拼抹茶",
-        "productImageUrl": "https://go.cdn.heytea.com/storage/product/2024/10/31/ab925be7569947638b22582a7d54cc9d.jpg",
-        "productNameIconUrl": "",
-        "quantity": 5,
-        "isChoosed": true,
-        "itemType": 0,
-        "sort": 1733298386375,
-        "itemId": "s:|30400360|19999005,19999011,19999137,19999435,19999508,19999964|||",
-        "productId": 7214,
-        "productNo": "2410113829811927",
-        "categoryId": 410,
-        "showTrademark": false,
-        "isSingle": false,
-        "isNowMaking": true,
-        "isPremade": false,
-        "isJoinQueue": true,
-        "isNewProduct": false,
-        "hasBoxFee": true,
-        "hasTableware": false,
-        "supportReverseElection": false,
-        "skuId": 12419,
-        "skuNo": "30400360",
-        "skuType": 1,
-        "unTaxPrice": 18,
-        "price": 19,
-        "originPrice": 19,
-        "discountPrice": 0,
-        "materials": [
-          {
-            "groupId": 82,
-            "id": 1650,
-            "no": "19999435",
-            "name": "冰(推荐)",
-            "price": 0,
-            "type": 0
-          },
-          {
-            "groupId": 3,
-            "id": 558,
-            "no": "19999011",
-            "name": "推荐",
-            "price": 0,
-            "type": 0
-          },
-          {
-            "groupId": 4,
-            "id": 379,
-            "no": "19999005",
-            "name": "少甜(推荐)",
-            "price": 0,
-            "type": 0
-          },
-          {
-            "groupId": 12,
-            "id": 3560,
-            "no": "19999137",
-            "name": "标准(推荐)",
-            "price": 0,
-            "type": 0
-          },
-          {
-            "groupId": 171,
-            "id": 3349,
-            "no": "19999964",
-            "name": "标准(含黑糖波波)",
-            "price": 0,
-            "type": 0
-          },
-          {
-            "groupId": 27,
-            "id": 1835,
-            "no": "19999508",
-            "name": "可降解吸管",
-            "price": 0,
-            "type": 0
-          }
-        ]
+        "quantity": 1,
+        "sku_id": 12514,
+        "attribute_ids": [],
+        "material_ids": [
+          3235,
+          393,
+          3569,
+          1981,
+          2697,
+          1835
+        ],
+        "bind": [],
+        "uuid": "s:|30400143|19999005,19999013,19999205,19999348,19999508,19999964|||;-7135",
+        "join_time": 1733450880952,
+        "user_infos": []
+      },
+      {
+        "quantity": 1,
+        "sku_id": 12420,
+        "attribute_ids": [],
+        "material_ids": [
+          3235,
+          501,
+          3569,
+          1981,
+          2685,
+          2833,
+          1835
+        ],
+        "bind": [],
+        "uuid": "s:|30400359|19999005,19999013,19999205,19999348,19999436,19999508,19999964|||;-7213",
+        "join_time": 1733450877650,
+        "user_infos": []
       }
     ],
-    "mallProducts": [],
-    "totalPrice": 95,
-    "productTotalPrice": 95,
-    "originTotalPrice": 95,
-    "discountPrice": 0,
-    "couponPrice": 0,
-    "activityPrice": 0,
-    "goCartPrice": 95,
-    "goCartNoVirtualPrice": 0,
-    "goCartVirtualPrice": 0,
-    "goCartOriginPrice": 95,
-    "goCartProductsPrice": 95,
-    "goCartProductsOriginPrice": 95,
-    "goCartUnTaxProductsPrice": 90,
-    "mallCartPrice": 0,
-    "mallCartOriginPrice": 0,
-    "mallDeliveryPrice": 0,
-    "isTakeaway": false,
-    "deliveryPrice": 0,
-    "deliveryOriginPrice": 0,
-    "totalCount": 5,
-    "freshCount": 0,
-    "teaCount": 5,
-    "deleteProducts": [],
-    "isChoosedAll": true,
-    "isGoCartChoosedAll": true,
-    "tablewareInfo": {
-      "isShowOption": false,
-      "switchType": 0,
-      "products": []
-    },
-    "isMallCartChoosedAll": true,
-    "pointsInfo": {
-      "totalPoints": 47,
-      "teaPointsInfo": {
-        "totalPoints": 47,
-        "detail": [
-          {
-            "points": 47,
-            "type": 1
-          }
-        ]
+    "set_products": [],
+    "combos": [],
+    "shop_business_is": 0,
+    "user_rights": [],
+    "coupon_library_id": "1201737613",
+    "pmsData": {
+      "10041002": {
+        "clientScene": 6,
+        "isStudentMember": false,
+        "timestamp": 1733451008101,
+        "isMemberPlus": false
       },
-      "generalPointsInfo": null,
-      "description": "每消费2元获得1积分"
+      "10041003": {
+        "benefitNos": ""
+      }
     },
-    "expInfo": {
-      "totalExps": 114,
-      "subExpList": [
-        {
-          "exps": 95,
-          "subTradeType": 0,
-          "percent": null
-        },
-        {
-          "exps": 19,
-          "subTradeType": 2,
-          "percent": 20
-        }
-      ],
-      "extraExps": 19,
-      "title": null,
-      "generalExpsData": null,
-      "teaExpsData": {
-        "exps": 114,
-        "extraExps": 19,
-        "subExpList": [
-          {
-            "exps": 95,
-            "subTradeType": 0,
-            "percent": null
-          },
-          {
-            "exps": 19,
-            "subTradeType": 2,
-            "percent": 20
-          }
-        ]
-      },
-      "decription": null,
-      "ignoreProductFlag": false
-    },
-    "userRights": {
-      "invalidBenefitCode": null,
-      "invalidBenefitReason": null,
-      "totalAmount": 0,
-      "deliveryDiscountFee": 0,
-      "randomAmount": 0,
-      "benefitItemMap": {},
-      "benefitList": [
-        {
-          "level": 2,
-          "benefitNo": "1010003",
-          "benefitName": "周四一起喝随机立减",
-          "privilegeType": 1,
-          "balance": 1,
-          "totalBalance": 1000,
-          "periodStart": "2024-02-01",
-          "periodEnd": null,
-          "region": "CN",
-          "useIs": 0,
-          "checkedIs": 0,
-          "reason": "仅限一起喝订单使用",
-          "b1010008UseCount": null,
-          "tips": null,
-          "useLimit": null
-        }
-      ]
-    },
-    "showRule": {
-      "0": [
-        {
-          "isUseMemberPlusPrivilege": false,
-          "ruleNo": "10023008",
-          "haveMemberPlusProduct": null,
-          "canUseMemberPlusPrivilege": false
-        },
-        {
-          "reqTimestamp": null,
-          "ruleNo": "10020000",
-          "pmsData": {}
-        }
-      ]
-    },
-    "takeawayDeliveryFee": {
-      "deliveryPrice": 0,
-      "deliveryOriginPrice": 0,
-      "deliveryRealOriginPrice": 0,
-      "deliveryDiscount": false,
-      "deliveryNightIncrease": false,
-      "deliveryNightPrice": 0,
-      "deliveryActivityPrice": 0,
-      "deliveryMemberPrice": 0,
-      "deliveryMemberInspPrice": 0,
-      "deliveryCouponPrice": 0,
-      "exceedFeeIncrease": 0,
-      "exceedDistance": 0,
-      "deliveryThreshold": 0,
-      "rideDistance": 0
-    },
-    "needBoxCount": 5,
-    "totalTaxFee": 0,
-    "taxFeeInfo": [],
-    "taxShowRule": {
-      "showTaxRateInMenu": true,
-      "showTaxRateInBill": false
+    "location": "114.278455,30.71106",
+    "packInfo": {
+      "eat_method": "TAKE-OUT",
+      "pack_method": "PAPER_BAG",
+      "box_fee": 0
     }
   }
 }

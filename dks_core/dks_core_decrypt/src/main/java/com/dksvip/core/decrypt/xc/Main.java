@@ -11,10 +11,10 @@ public class Main {
 //        JSONObject response = xcApi.getShop("114.278457,30.711057",3161,0);
 //        System.out.println(response);
 
-//        JSONObject shopCategories = xcApi.getMenuCategories(0, 3161);
+//        JSONObject shopCategories = xcApi.getMenuCategories("0", "3161");
 //        System.out.println("shopCategories = " + shopCategories);
 //
-//        JSONObject productInfo = xcApi.getProductInfo("0", "0", "7019", "3161");
+//        JSONObject productInfo = xcApi.getProductInfo("0", "0", "7135", "3161");
 //        System.out.println("productInfo = " + productInfo);
 
 //        System.out.println(xcApi.getComboInfo("7366", "3161"));
@@ -82,7 +82,7 @@ public class Main {
 //        System.out.println(response5);
 //        System.out.println(xcApi.getUserAddressList());
 
-        System.out.println(xcApi.deleteAddress("79298020"));
+//        System.out.println(xcApi.deleteAddress("79298020"));
 
 //        System.out.println(xcApi.getUserInfo());
 //        System.out.println(xcApi.getLogin(null));
